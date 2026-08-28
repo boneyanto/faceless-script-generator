@@ -42,9 +42,10 @@ for idx, img_path in enumerate(input_images, 1):
     ]
     subprocess.run(cmd, cwd=REALCUGAN_DIR, check=True)
     
-    # Convert PNG to WebP with high quality
+    # Convert PNG and resize to standard 4K UHD (3840x2160) for optimal rendering speed
     with Image.open(temp_png) as im:
-        im.save(out_webp_path, "WEBP", quality=95)
+        im_4k = im.resize((3840, 2160), Image.Resampling.LANCZOS)
+        im_4k.save(out_webp_path, "WEBP", quality=95)
     if os.path.exists(temp_png):
         os.remove(temp_png)
 
