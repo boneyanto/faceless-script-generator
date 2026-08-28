@@ -60,11 +60,13 @@ Then stop. Wait for the user's reply.
 
 Once the user selects or specifies a topic, immediately generate the **Full Narration Script** AND immediately follow it with the **Complete YouTube Metadata & Thumbnail Prompt** in one continuous flow.
 
-### A. NARRATION SCRIPT RULES:
+### A. NARRATION SCRIPT RULES (Guaranteed 8+ Minutes Duration):
+- **Duration Requirement:** Minimum 8 minutes voiceover length (target 8–12 minutes).
+- **Paragraph Count:** Must contain **at least 26 to 35 paragraphs**.
 - **Strict Paragraph Rule:** Divide the entire script into distinct paragraphs. **Every single paragraph MUST contain between 40 and 50 words.**
-- **Length:** 1,200–2,000 words total (composed of 25–40 structured 40–50 word paragraphs).
+- **Total Word Count:** 1,250–1,650 words total (at standard voiceover pace of 130–140 words/minute, 28 paragraphs = ~1,260 words = 9.0 minutes audio).
 - **Format:** Pure narration only — no headers, no bullet points, no visual cues, no stage directions, no parenthetical notes inside the script file/content.
-- **Voice:** Calm, intelligent, 2nd-person throughout.
+- **Voice:** Calm, intelligent, 2nd-person throughout ("you", "your brain", "your ancestors").
 - **Credible Sources:** Include at least 3-4 named scientific studies, books, or historical records woven naturally into the narration.
 - **Opening:** High-retention hook within the first paragraph.
 - **Ending:** Final paragraph echoes the opening line with a profound reframe.
