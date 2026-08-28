@@ -62,27 +62,31 @@ const server = http.createServer((req, res) => {
     }
   }
 
-  let outputWriteStream = null;
+  if (req.method === "POST" && urlPath === "/save-start") {
+    if (fs.existsSync(OUTPUT_VIDEO_PATH)) {
+      fs.unlinkSync(OUTPUT_VIDEO_PATH);
+    }
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({ ok: true }));
+    return;
+  }
 
   if (req.method === "POST" && urlPath === "/save-chunk") {
-    if (!outputWriteStream) {
-      outputWriteStream = fs.createWriteStream(OUTPUT_VIDEO_PATH);
-    }
-    req.pipe(outputWriteStream, { end: false });
+    const chunks = [];
+    req.on("data", chunk => chunks.push(chunk));
     req.on("end", () => {
+      const data = Buffer.concat(chunks);
+      fs.appendFileSync(OUTPUT_VIDEO_PATH, data);
       res.writeHead(200, { "Content-Type": "application/json" });
-      res.end(JSON.stringify({ ok: true }));
+      res.end(JSON.stringify({ ok: true, written: data.length }));
     });
     return;
   }
 
   if (req.method === "POST" && urlPath === "/save-finish") {
-    if (outputWriteStream) {
-      outputWriteStream.end();
-      outputWriteStream = null;
-    }
+    const totalSize = fs.existsSync(OUTPUT_VIDEO_PATH) ? fs.statSync(OUTPUT_VIDEO_PATH).size : 0;
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ ok: true }));
+    res.end(JSON.stringify({ ok: true, totalSize }));
     return;
   }
 
@@ -405,6 +409,7 @@ server.listen(PORT, async () => {
       updateStatus(`Muxing complete! Streaming ${finalSizeMB} MB in 8MB chunks to disk...`);
 
       // Stream binary data in safe 8MB chunks (avoids browser IPC / string length crash!)
+      await fetch("/save-start", { method: "POST" });
       const totalBytes = buffer.byteLength;
       const uploadChunkSize = 8 * 1024 * 1024; // 8MB
       for (let offset = 0; offset < totalBytes; offset += uploadChunkSize) {
