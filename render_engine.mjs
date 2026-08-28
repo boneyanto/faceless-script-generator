@@ -62,6 +62,30 @@ const server = http.createServer((req, res) => {
     }
   }
 
+  let outputWriteStream = null;
+
+  if (req.method === "POST" && urlPath === "/save-chunk") {
+    if (!outputWriteStream) {
+      outputWriteStream = fs.createWriteStream(OUTPUT_VIDEO_PATH);
+    }
+    req.pipe(outputWriteStream, { end: false });
+    req.on("end", () => {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ ok: true }));
+    });
+    return;
+  }
+
+  if (req.method === "POST" && urlPath === "/save-finish") {
+    if (outputWriteStream) {
+      outputWriteStream.end();
+      outputWriteStream = null;
+    }
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({ ok: true }));
+    return;
+  }
+
   if (urlPath === "/timeline.json") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(timeline));
@@ -83,7 +107,8 @@ server.listen(PORT, async () => {
       "--enable-blink-features=WebCodecs",
       "--no-sandbox",
       "--disable-dev-shm-usage",
-      "--autoplay-policy=no-user-gesture-required"
+      "--autoplay-policy=no-user-gesture-required",
+      "--js-flags=--max-old-space-size=4096"
     ]
   });
 
@@ -100,7 +125,7 @@ server.listen(PORT, async () => {
   const startTime = Date.now();
 
   try {
-    const resultBufferHex = await page.evaluate(async ({ width, height, fps, bitrate }) => {
+    const renderStats = await page.evaluate(async ({ width, height, fps, bitrate }) => {
       const updateStatus = (text) => {
         const el = document.getElementById("status");
         if (el) el.innerText = text;
@@ -222,17 +247,52 @@ server.listen(PORT, async () => {
 
           const currentSec = f / fps;
           
-          // Find which of the 4 panels is active at currentSec
+          // Find which of the 4 panels is active at currentSec and its timing
           let activeBmp = bitmaps[0].bmp;
+          let activePanel = bitmaps[0].panel;
           for (let p = 0; p < bitmaps.length; p++) {
             if (currentSec >= bitmaps[p].panel.startTime && currentSec <= bitmaps[p].panel.endTime) {
               activeBmp = bitmaps[p].bmp;
+              activePanel = bitmaps[p].panel;
               break;
             }
           }
 
-          // Draw active panel to OffscreenCanvas (zero copy)
+          // Calculate normalized progress within active panel (0.0 to 1.0)
+          const panelDuration = Math.max(0.1, activePanel.endTime - activePanel.startTime);
+          const rawProgress = Math.min(1.0, Math.max(0.0, (currentSec - activePanel.startTime) / panelDuration));
+          // Smooth easing curve (smoothstep)
+          const ease = rawProgress * rawProgress * (3 - 2 * rawProgress);
+
+          // Zero-cost dynamic camera motion variations (Kurzgesagt/Vox style Ken Burns)
+          let scale = 1.04;
+          let panX = 0;
+          let panY = 0;
+          const maxPan = width * 0.025; // 2.5% subtle horizontal drift
+
+          if (activePanel.subIndex === 1) {
+            // Motion 1: Gentle Smooth Zoom-In (1.01x -> 1.08x)
+            scale = 1.01 + ease * 0.07;
+          } else if (activePanel.subIndex === 2) {
+            // Motion 2: Slow Cinematic Pan-Right with steady scale
+            scale = 1.05;
+            panX = (ease - 0.5) * maxPan;
+          } else if (activePanel.subIndex === 3) {
+            // Motion 3: Gentle Smooth Zoom-Out (1.08x -> 1.01x)
+            scale = 1.08 - ease * 0.07;
+          } else {
+            // Motion 4: Slow Cinematic Pan-Left with subtle breathing
+            scale = 1.03 + Math.sin(ease * Math.PI) * 0.035;
+            panX = (0.5 - ease) * maxPan;
+          }
+
+          // Draw active panel with hardware-accelerated OffscreenCanvas transform (Zero copy & zero CPU penalty)
+          ctx.save();
+          ctx.translate(width / 2, height / 2);
+          ctx.scale(scale, scale);
+          ctx.translate(-width / 2 + panX, -height / 2 + panY);
           ctx.drawImage(activeBmp, 0, 0, width, height);
+          ctx.restore();
 
           const timestampMicrosec = Math.round(f * frameDurationMicrosec);
           const isKeyFrame = f % (fps * 2) === 0; // Keyframe every 2 seconds
@@ -337,35 +397,43 @@ server.listen(PORT, async () => {
 
       // 9. Finalize MP4 Muxing
       updateStatus("Finalizing MP4 Muxer...");
-      updateProgress(98.0);
+      updateProgress(90.0);
       muxer.finalize();
 
       const { buffer } = muxer.target;
-      updateStatus(`Muxing complete! Total video file size: ${(buffer.byteLength / 1024 / 1024).toFixed(2)} MB`);
+      const finalSizeMB = (buffer.byteLength / (1024 * 1024)).toFixed(2);
+      updateStatus(`Muxing complete! Streaming ${finalSizeMB} MB in 8MB chunks to disk...`);
+
+      // Stream binary data in safe 8MB chunks (avoids browser IPC / string length crash!)
+      const totalBytes = buffer.byteLength;
+      const uploadChunkSize = 8 * 1024 * 1024; // 8MB
+      for (let offset = 0; offset < totalBytes; offset += uploadChunkSize) {
+        const slice = buffer.slice(offset, offset + uploadChunkSize);
+        await fetch("/save-chunk", {
+          method: "POST",
+          headers: { "Content-Type": "application/octet-stream" },
+          body: slice
+        });
+        const uploadPct = 90.0 + ((offset + slice.byteLength) / totalBytes) * 9.0;
+        updateProgress(uploadPct);
+      }
+
+      await fetch("/save-finish", { method: "POST" });
+
+      updateStatus("Video successfully saved to disk!");
       updateProgress(100.0);
 
-      // Convert ArrayBuffer to hex string for transfer
-      const uint8 = new Uint8Array(buffer);
-      let hex = "";
-      const CHUNK_SIZE = 0x8000;
-      for (let i = 0; i < uint8.length; i += CHUNK_SIZE) {
-        const sub = uint8.subarray(i, Math.min(i + CHUNK_SIZE, uint8.length));
-        hex += Array.from(sub).map(b => b.toString(16).padStart(2, "0")).join("");
-      }
-      return hex;
+      return { totalFrames: currentFrameIdx, sizeMB: finalSizeMB, durationSec: totalDuration };
     }, {
       width: 1920,
       height: 1080,
       fps: 30,
-      bitrate: 5_000_000
+      bitrate: 3_000_000
     });
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    console.log(`Render completed in ${elapsed}s. Writing MP4 to disk...`);
-
-    const videoBuffer = Buffer.from(resultBufferHex, "hex");
-    fs.writeFileSync(OUTPUT_VIDEO_PATH, videoBuffer);
-    console.log(`Successfully saved final video to: ${OUTPUT_VIDEO_PATH} (${(videoBuffer.length / (1024 * 1024)).toFixed(2)} MB)`);
+    console.log(`Render completed in ${elapsed}s! Total Frames: ${renderStats.totalFrames}, Size: ${renderStats.sizeMB} MB`);
+    console.log(`Successfully saved final video to: ${OUTPUT_VIDEO_PATH}`);
 
     await browser.close();
     server.close();
