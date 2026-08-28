@@ -1,10 +1,14 @@
 ================================================================================
-   🎨 6 PILIHAN VISUAL STYLE & THUMBNAIL PRESETS (PROMPT TESTING FILE)
-   Topik: What Did Ancient Humans Actually Dream About?
+   🎨 12 PILIHAN VISUAL STYLE & THUMBNAIL PRESETS (PROMPT TESTING FILE)
+   Topik Uji: What Did Ancient Humans Actually Dream About?
 ================================================================================
 
 Gunakan prompt di bawah ini untuk menguji hasil visual di AI Image Generator 
 (Midjourney / Ideogram / Flux / DALL-E 3 / Leonardo.ai) sebelum memilih style channel.
+
+================================================================================
+BATCH 1: 6 STYLE DASAR
+================================================================================
 
 --------------------------------------------------------------------------------
 1. STYLE 1: KURZGESAGT FLAT VECTOR (Sains Populer & Geometris Bersih)
@@ -64,5 +68,69 @@ Moody cinematic vector art, Aperture and Pursuit of Wonder style, deep midnight 
 
 [Prompt Thumbnail YouTube]:
 Cinematic philosophical YouTube thumbnail, deep pitch black background with glowing golden-orange rim light, centered lone human silhouette looking up at a massive glowing cosmic eye made of constellations, bold clean modern typography "WHY YOU CAN'T ESCAPE IT", high dramatic tension, cinematic mystery, 16:9 aspect ratio.
+
+
+================================================================================
+BATCH 2: 6 STYLE TAMBAHAN PREMIUM & TRENDING
+================================================================================
+
+--------------------------------------------------------------------------------
+7. STYLE 7: ISOMETRIC PIXEL ART DIORAMA (Retro Gaming & Micro-Voxel)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Detailed 32-bit isometric pixel art diorama, nostalgic high-end game aesthetic, vibrant pastel color palette, clean grid perspective, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: isometric pixel art bedroom with sleeping character and tiny pixel floating ZZZ] [Panel 2 Top-Right: cross-section pixel diorama of a glowing 8-bit human brain with pulsating red alert pixel tiles] [Panel 3 Bottom-Left: prehistoric savannah isometric diorama with tiny voxel hunter holding wooden spear] [Panel 4 Bottom-Right: voxel sabertooth tiger hiding behind isometric pixel bushes with glowing eyes], clean pixel edges, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Isometric pixel art YouTube thumbnail, stunning 3D micro-voxel diorama showing a split floating island: top half is a modern cozy room with neon glow, bottom half is a prehistoric cave with fire embers and a lurking pixel tiger, bold 8-bit arcade style typography "LOCKED IN STONE AGE", vibrant lighting, high click appeal, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+8. STYLE 8: MINIMALIST FLAT GOUACHE / EDITORIAL STORYBOOK (Jon Klassen Style)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Minimalist editorial gouache painting, Jon Klassen and contemporary picture-book art style, textured dry brush strokes, warm muted earthy tones (terracotta, sage green, charcoal black, linen cream), symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: simple charming painted human figure curled up asleep under a textured linen blanket] [Panel 2 Top-Right: abstract painted human silhouette with glowing amber heart and brain] [Panel 3 Bottom-Left: primitive hunter figure walking through sparse tall painted grass under a giant paper moon] [Panel 4 Bottom-Right: two dark silhouette animals watching quietly from behind textured trees], analog art feel, elegant matte finish, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Minimalist storybook gouache painting YouTube thumbnail, striking contrast between deep charcoal black background and rich golden terracotta, a solitary stylized human figure facing an immense silhouetted ancient beast under a giant textured moon, bold hand-stamped editorial typography "THE SURVIVAL SIMULATOR", artistic and captivating, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+9. STYLE 9: CYBERNETIC BLUEPRINT & NEON HOLOGRAM (Futuristic Sci-Fi Schematic)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+High-tech blueprint vector illustration, glowing holographic schematic art style, dark obsidian background with glowing electric cyan and amber laser vector lines, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left: wireframe holographic human body in sleep mode with biometric telemetry lines] [Panel 2 Top-Right: 3D holographic wireframe brain schematic highlighting the neural amygdala sector in intense glowing orange] [Panel 3 Bottom-Left: tactical radar-style topographic map tracking prehistoric predator movement vectors] [Panel 4 Bottom-Right: futuristic comparison HUD comparing stone-age DNA code to modern neural architecture], ultra precise digital schematics, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Futuristic holographic blueprint YouTube thumbnail, deep dark obsidian background with luminous electric blue and fiery orange wireframe lines, centered rotating 3D holographic human skull and brain with glowing data nodes, bold neon laser typography "ANCIENT CODE DETECTED", high-tech science aesthetic, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+10. STYLE 10: JAPANESE UKIYO-E / SUMI-E WOODBLOCK (Tradisional Oriental & Tinta Kuas)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Traditional Japanese Ukiyo-e woodblock print and Sumi-e ink wash style, fluid calligraphic ink brush outlines, textured aged washi paper background, indigo blue and vermilion red accents, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: ancient human sleeping peacefully amidst swirling traditional cloud patterns] [Panel 2 Top-Right: dynamic Japanese dragon/beast spirit emerging from stylized dream smoke] [Panel 3 Bottom-Left: warrior hunter in traditional stance holding spear against rising sun wave] [Panel 4 Bottom-Right: glowing spirit lanterns floating across misty dark bamboo grove], authentic woodblock print aesthetic, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Dramatic Japanese Ukiyo-e woodblock print YouTube thumbnail, giant roaring mythical prehistoric beast rising out of stormy Great Wave style clouds confronting a tiny courageous hunter silhouette, bold traditional brush calligraphy typography "NIGHT OF THE HUNTER", high visual drama, rich indigo and fiery gold colors, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+11. STYLE 11: TACTILE CLAYMATION / STOP-MOTION CRAFT (Aardman / Papercraft 3D)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Charming claymation stop-motion plasticine art style, Aardman inspired miniature tactile craft, handmade clay texture with subtle thumbprint marks, soft studio macro lighting, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: cute handmade clay character sleeping under a tiny fabric quilt in clay bed] [Panel 2 Top-Right: colorful sculpted plasticine human brain with funny cartoon alarm bell ringing] [Panel 3 Bottom-Left: chunky clay caveman holding wooden spear in front of miniature papercraft trees] [Panel 4 Bottom-Right: goofy handcrafted clay sabertooth tiger peeking behind felt bush], depth of field, adorable tactile animation feel, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+High-detail claymation stop-motion YouTube thumbnail, hyper-charming sculpted plasticine scene with soft studio rim lighting, a worried clay caveman staring wide-eyed at a giant cartoon clay tiger paw stepping into frame, bold 3D extruded clay typography "STILL UNTOUCHED", unique high-stopping power YouTube cover, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+12. STYLE 12: RETRO 1980s/90s ANIME CEL ANIMATION (Ghibli / Lo-Fi Sci-Fi)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Classic 1980s vintage anime cel animation style, Studio Ghibli and retro sci-fi OVA aesthetic, hand-painted gouache backgrounds, soft warm cel shading, subtle retro VHS film grain, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: cozy retro anime character sleeping by an open window under starlit sky] [Panel 2 Top-Right: glowing mystical anime neural orb showing visions of prehistoric nature] [Panel 3 Bottom-Left: young anime hunter walking through lush ancient forest with spear] [Panel 4 Bottom-Right: majestic giant ancient animal spirit watching from mountain ridge], nostalgic cinematic lighting, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+1980s retro anime movie poster YouTube thumbnail, breathtaking hand-painted cel animation art, young prehistoric protagonist looking up at an immense celestial sabertooth constellation glowing in the night sky, bold nostalgic Japanese retro anime title typography "THE PRIMAL DREAM", emotional cinematic atmosphere, 16:9 aspect ratio.
 
 ================================================================================
