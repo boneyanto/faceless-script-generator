@@ -1,4 +1,5 @@
 import os
+import sys
 import glob
 import subprocess
 import json
@@ -21,15 +22,24 @@ REALCUGAN_BIN = os.path.join(REALCUGAN_DIR, "realcugan-ncnn-vulkan")
 os.makedirs(UPSCALED_DIR, exist_ok=True)
 os.makedirs(PANELS_DIR, exist_ok=True)
 
-# 1. Upscale all images using Real-CUGAN
+# 1. Upscale images using Real-CUGAN CLI with smart caching
 input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.png")))
-print(f"Found {len(input_images)} input images to upscale with Real-CUGAN.")
+if not input_images:
+    input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.webp"))) + sorted(glob.glob(os.path.join(IMAGES_DIR, "*.jpg")))
+
+force_reprocess = "--force" in sys.argv
+
+print(f"Found {len(input_images)} input images.")
 
 for idx, img_path in enumerate(input_images, 1):
     base_webp = f"img_{idx:02d}.webp"
     out_webp_path = os.path.join(UPSCALED_DIR, base_webp)
     temp_png = os.path.join(UPSCALED_DIR, f"temp_{idx:02d}.png")
     
+    if os.path.exists(out_webp_path) and os.path.getsize(out_webp_path) > 0 and not force_reprocess:
+        print(f"[{idx}/{len(input_images)}] (Cached) {base_webp} already upscaled, skipping Real-CUGAN.")
+        continue
+
     print(f"[{idx}/{len(input_images)}] Real-CUGAN upscaling {os.path.basename(img_path)} -> {base_webp}...")
     cmd = [
         REALCUGAN_BIN,
@@ -49,25 +59,47 @@ for idx, img_path in enumerate(input_images, 1):
     if os.path.exists(temp_png):
         os.remove(temp_png)
 
-# 2. Symmetrically crop each 4-panel image into 4 quadrants
-print("\nCropping Real-CUGAN upscaled images into 4 symmetric panels...")
+# 2. Symmetrically crop each 4-panel image into 4 quadrants with caching
+print("\nChecking 4-quadrant symmetric panels...")
 panel_list = []
 
 for idx in range(1, len(input_images) + 1):
     upscaled_path = os.path.join(UPSCALED_DIR, f"img_{idx:02d}.webp")
+    if not os.path.exists(upscaled_path):
+        continue
+
+    quadrants = [
+        ("01", "Top-Left"),
+        ("02", "Top-Right"),
+        ("03", "Bottom-Left"),
+        ("04", "Bottom-Right"),
+    ]
+    
+    # Check if all 4 panels exist
+    all_panels_exist = all(
+        os.path.exists(os.path.join(PANELS_DIR, f"panel_{idx:02d}_{q_idx}.webp"))
+        and os.path.getsize(os.path.join(PANELS_DIR, f"panel_{idx:02d}_{q_idx}.webp")) > 0
+        for q_idx, _ in quadrants
+    )
+
+    if all_panels_exist and not force_reprocess:
+        for q_idx, _ in quadrants:
+            panel_list.append(os.path.join(PANELS_DIR, f"panel_{idx:02d}_{q_idx}.webp"))
+        continue
+
     with Image.open(upscaled_path) as im:
         W, H = im.size
         mid_x = W // 2
         mid_y = H // 2
         
-        quadrants = [
+        crop_boxes = [
             ("01", (0, 0, mid_x, mid_y)),        # Top-Left
             ("02", (mid_x, 0, W, mid_y)),        # Top-Right
             ("03", (0, mid_y, mid_x, H)),        # Bottom-Left
             ("04", (mid_x, mid_y, W, H)),        # Bottom-Right
         ]
         
-        for q_idx, box in quadrants:
+        for q_idx, box in crop_boxes:
             panel_name = f"panel_{idx:02d}_{q_idx}.webp"
             panel_path = os.path.join(PANELS_DIR, panel_name)
             cropped = im.crop(box)
@@ -75,7 +107,7 @@ for idx in range(1, len(input_images) + 1):
             panel_list.append(panel_path)
             print(f"Saved: {panel_name} ({cropped.size[0]}x{cropped.size[1]})")
 
-print(f"\nSuccessfully generated {len(panel_list)} panels.")
+print(f"\nAll {len(panel_list)} panels verified & ready.")
 
 # 3. Parse LRC and calculate chunk durations
 audio = MP3(VO_PATH)
