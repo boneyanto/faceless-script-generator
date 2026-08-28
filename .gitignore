@@ -1,0 +1,28 @@
+# Channel media and output assets
+channel_*/
+channel_*
+channels/
+
+# Python Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Node Modules & Package Manager
+node_modules/
+.pnpm-store/
+
+# Downloaded Binaries and AI Models
+tools/
+*.zip
+*.bin
+*.param
+*.pth
+
+# Temporary test outputs
+test_out/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
