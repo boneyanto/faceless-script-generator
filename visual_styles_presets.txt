@@ -1,0 +1,68 @@
+================================================================================
+   🎨 6 PILIHAN VISUAL STYLE & THUMBNAIL PRESETS (PROMPT TESTING FILE)
+   Topik: What Did Ancient Humans Actually Dream About?
+================================================================================
+
+Gunakan prompt di bawah ini untuk menguji hasil visual di AI Image Generator 
+(Midjourney / Ideogram / Flux / DALL-E 3 / Leonardo.ai) sebelum memilih style channel.
+
+--------------------------------------------------------------------------------
+1. STYLE 1: KURZGESAGT FLAT VECTOR (Sains Populer & Geometris Bersih)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Vibrant 2D flat vector illustration, Kurzgesagt educational art style, smooth clean silhouettes, bold geometric shapes, rich contrast color palette, symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left: cozy modern human character sleeping peacefully in a minimalist blue bedroom] [Panel 2 Top-Right: cross-section diagram of a glowing brain with amygdala lit up in neon orange fire] [Panel 3 Bottom-Left: prehistoric human with spear crouching in tall savannah grass under starry purple sky] [Panel 4 Bottom-Right: glowing yellow predator eyes lurking in dark geometric bushes], clean solid color blocks, no photorealism, no 3D render, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Kurzgesagt art style YouTube thumbnail, vibrant flat geometric vector illustration, split screen composition: left side shows a sleeping modern character with a glowing cosmic thought bubble, right side shows an ancient hunter confronting a giant glowing prehistoric beast silhouette, high contrast neon cyan and golden yellow color palette, bold 3D flat text at top "NIGHTMARE OR SURVIVAL?", rule of thirds, high click-through rate, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+2. STYLE 2: OVERSIMPLIFIED COMIC (Kartun Sejarah Ekspresif & Lucu)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+2D OverSimplified cartoon history style, thick bold black outlines, simple expressive comic characters with funny exaggerated facial expressions, flat bright colors, symmetrical 4-panel 2x2 comic layout: [Panel 1 Top-Left: funny cartoon stickman sleeping in bed with drool and ZZZ floating up] [Panel 2 Top-Right: ancient caveman running in panic with wide eyes from an angry cartoon sabertooth tiger] [Panel 3 Bottom-Left: caveman character scratching head looking confused with huge question marks] [Panel 4 Bottom-Right: prehistoric tribe cheering around a crackling campfire], white and solid primary color background, clean comic art, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+OverSimplified style YouTube thumbnail, hilarious exaggerated cartoon illustration, a terrified caveman running for his life with giant eyes while a goofy sabertooth tiger chases him with an open mouth, large bold red and yellow hand-lettered text "WHY WE PANIC!", solid bright yellow background with radial speed lines, high visual energy, high CTR YouTube cover, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+3. STYLE 3: EDITORIAL INFOGRAPHIC / VOX (Modern, Isometrik & Ilmiah)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Modern editorial infographic illustration, Vox and PolyMatter explainer style, clean isometric vector art, sophisticated navy blue and warm cream color palette, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left: clean isometric human figure in deep sleep with brain frequency wave graph above] [Panel 2 Top-Right: stylized anatomical 3D brain map highlighting the limbic system in glowing coral orange] [Panel 3 Bottom-Left: topographic prehistoric terrain map showing ancient migration paths and predator zones] [Panel 4 Bottom-Right: sleek comparative data chart comparing modern sleep cycles to hunter-gatherer sleep patterns], technical elegance, minimalist, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Vox style YouTube thumbnail, premium editorial infographic design, high-contrast dark navy background, large hyper-detailed 3D glowing anatomical brain cross-section floating in center with glowing neural pathways, overlay technical measuring grid and bold yellow typography "THE 300,000 YEAR BUG", ultra clean minimalist graphic design, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+4. STYLE 4: VINTAGE LINOCUT / MYTHIC INK (Ukiran Kayu & Antropologi Kuno)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Vintage linocut woodblock print illustration, detailed black ink cross-hatching, antique parchment paper background, mythic anthropology art style, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: woodcut engraving of a sleeping ancient human under a detailed crescent moon] [Panel 2 Top-Right: roaring prehistoric beast rendered in dramatic woodblock black and white contrast] [Panel 3 Bottom-Left: ancient tribe performing fire ritual with embers floating into the sky] [Panel 4 Bottom-Right: ancestral spirits depicted as constellation star patterns], aged texture, historical archive aesthetic, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Mythic antique woodcut engraving YouTube thumbnail, dramatic chiaroscuro black ink on weathered parchment background, central detailed illustration of a primitive human skull merged with a blazing fire and cosmic night sky, bold distressed vintage typography "ANCIENT MIND", mysterious ancient anthropology vibe, high CTR, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+5. STYLE 5: RETRO 1950s MID-CENTURY UPA (Kartun Edukasi Vintage Atom Age)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+1950s mid-century modern educational cartoon style, UPA animation aesthetic, retro pastel color palette of teal, mustard yellow, coral red, and beige, symmetrical 4-panel 2x2 comic layout: [Panel 1 Top-Left: retro 1950s stylized cartoon character sleeping with mid-century bedroom decor] [Panel 2 Top-Right: abstract geometric cartoon brain with gears and clockwork dials turning] [Panel 3 Bottom-Left: charming retro caveman holding stone axe in front of stylized geometric trees] [Panel 4 Bottom-Right: playful cartoon sabertooth cat with big smile], subtle vintage paper grain, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+1950s atomic age cartoon YouTube thumbnail, mid-century retro UPA art style, charming vintage scientist mascot pointing an arrow at a sleeping caveman thought bubble, bold retro typography in mustard yellow "DREAMING IN 10,000 BC", flat abstract geometric background shapes in teal and coral, nostalgic clean aesthetic, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+6. STYLE 6: MOODY CINEMATIC VECTOR (Aperture / Filosofis & Kosmik)
+--------------------------------------------------------------------------------
+[Prompt 4-Panel Video]:
+Moody cinematic vector art, Aperture and Pursuit of Wonder style, deep midnight black and indigo background, ethereal glowing neon highlights in amber and electric blue, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left: lone human silhouette lying on edge of a cliff gazing at cosmic starry vortex] [Panel 2 Top-Right: glowing geometric human brain floating in dark void with golden synapse sparks] [Panel 3 Bottom-Left: prehistoric hunter silhouette holding spear against giant glowing harvest moon] [Panel 4 Bottom-Right: modern person and ancient ancestor standing back-to-back in silhouette], deep atmospheric lighting, philosophical, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Cinematic philosophical YouTube thumbnail, deep pitch black background with glowing golden-orange rim light, centered lone human silhouette looking up at a massive glowing cosmic eye made of constellations, bold clean modern typography "WHY YOU CAN'T ESCAPE IT", high dramatic tension, cinematic mystery, 16:9 aspect ratio.
+
+================================================================================
