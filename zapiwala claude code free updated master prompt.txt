@@ -107,15 +107,32 @@ Saved to `channel_X/video_XX_topic/metadata.txt`:
 
 ---
 
-### C. AUTOMATIC 4-PANEL IMAGE PROMPT GENERATION (1 Prompt Per Paragraph):
+---
+
+### C. AUTOMATIC 4-PANEL IMAGE PROMPT GENERATION (ProvenTube Visual Direction Laws):
 Saved to `channel_X/video_XX_topic/image_prompts.txt`:
 
-For **every single paragraph** of the script, generate one comprehensive 4-panel symmetrical prompt:
-- **Format:** `01. [Paragraph 1 Theme] [Style Anchor], symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left: ...] [Panel 2 Top-Right: ...] [Panel 3 Bottom-Left: ...] [Panel 4 Bottom-Right: ...], [Style Lock], 16:9 aspect ratio.`
-- **Numbering:** Sequentially numbered (`01.`, `02.`, ... `28.`).
-- **Separation:** Each prompt is separated by a blank line.
-- **Style Consistency:** Uses the chosen style anchor and style lock throughout all prompts.
-- **Visual Continuity:** Follows the conceptual evolution of the paragraph closely.
+1. **Character & Environment Consistency Lock (Defined at start of prompts):**
+   - Define a fixed **Locked Character Appearance** (e.g., *“cute minimalist human protagonist in charcoal-blue sweater, dark pants, and neat brown hair”*) and **Color & Setting Theme** that is maintained across all prompts.
+
+2. **Cinematic 4-Panel Composition Diversity (Mandatory 4 Camera Shot Structure):**
+   In every 4-panel prompt (2x2 symmetrical grid), each quadrant must employ a distinct cinematic framing:
+   - **Panel 1 (Top-Left): Establishing Wide Shot** (Establishes environment, world context, and atmospheric mood).
+   - **Panel 2 (Top-Right): Medium Shot / Diagram / Reaction** (Focuses on character posture, facial cue, brain cross-section, or scientific detail).
+   - **Panel 3 (Bottom-Left): Narrative Dynamic Action / Historical Contrast** (Depicts dynamic movement, past vs. present juxtaposition, or conflict).
+   - **Panel 4 (Bottom-Right): Climax / Resolution / Visual Metaphor** (Punchline takeaway, symbolic conclusion, or dramatic visual payoff).
+
+3. **Physical Action Grounding (No Abstract Words):**
+   - Translate all emotional or narrative concepts into **concrete physical body language and mechanical interactions** (e.g., instead of "character feels stressed", write "character slouched heavily at wooden desk with head in hands and tensed shoulders").
+   - Eliminate anatomical glitches: ensure clean single characters with proper posture, avoiding duplicate limbs or unwanted background figures.
+
+4. **Clean Canvas Rule (Zero Text on Video Panels):**
+   - All 4 video panels must be 100% free of text, letters, watermarks, and typography overlays (text hooks are reserved strictly for the YouTube Thumbnail).
+
+5. **Prompt Format & Delivery:**
+   - **Format:** `01. [Style Anchor], [Character Lock], symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left (Wide Shot): ...] [Panel 2 Top-Right (Medium/Diagram): ...] [Panel 3 Bottom-Left (Dynamic Action): ...] [Panel 4 Bottom-Right (Climax/Metaphor): ...], [Style Lock], no text, no words, 16:9 aspect ratio.`
+   - **Numbering:** Sequentially numbered (`01.`, `02.`, ... `28.`).
+   - **Separation:** Each prompt is separated by a blank line.
 
 ---
 
