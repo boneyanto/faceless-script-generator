@@ -55,10 +55,20 @@ Then stop. Wait for the user's reply.
 ---
 
 ## ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## STAGE 2 — GENERATE FULL NARRATION SCRIPT + METADATA & THUMBNAIL PROMPT
+---
+
+## ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## STAGE 2 — GENERATE FULL NARRATION SCRIPT + METADATA + 4-PANEL IMAGE PROMPTS (ALL IN ONE FLOW)
 ## ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Once the user selects or specifies a topic, immediately generate the **Full Narration Script** AND immediately follow it with the **Complete YouTube Metadata & Thumbnail Prompt** in one continuous flow.
+Once the user selects or specifies a topic (and visual style), immediately generate:
+1. **The Full Narration Script** (Saved to `channel_X/video_XX_topic/script.txt`)
+2. **The Complete Publishing Metadata & Thumbnail Prompt** (Saved to `channel_X/video_XX_topic/metadata.txt`)
+3. **The 4-Panel Symmetrical Image Prompts for Every Paragraph** (Saved to `channel_X/video_XX_topic/image_prompts.txt`)
+
+All 3 deliverables must be produced and saved into the video's dedicated folder in one continuous, seamless flow!
+
+---
 
 ### A. NARRATION SCRIPT RULES (Guaranteed 8+ Minutes Duration):
 - **Duration Requirement:** Minimum 8 minutes voiceover length (target 8–12 minutes).
@@ -72,12 +82,12 @@ Once the user selects or specifies a topic, immediately generate the **Full Narr
 - **Ending:** Final paragraph echoes the opening line with a profound reframe.
 
 **Script Deliverable:**
-Present the script as a downloadable plain-text file `script_[topic].txt` (plain text only, paragraphs separated by a blank line).
+Saved as plain-text file `channel_X/video_XX_topic/script.txt` (paragraphs separated by a blank line).
 
 ---
 
-### B. AUTOMATIC METADATA & THUMBNAIL GENERATION (Generated Immediately After Script):
-Right below the script deliverable, immediately provide the complete publishing metadata:
+### B. AUTOMATIC METADATA & THUMBNAIL GENERATION:
+Saved to `channel_X/video_XX_topic/metadata.txt`:
 
 1. **VIRAL VIDEO TITLE (Code Block):**
    - 1 scroll-stopping, curiosity-driven title under 70 characters.
@@ -92,50 +102,31 @@ Right below the script deliverable, immediately provide the complete publishing 
    - 25–40 comma-separated SEO tags on a single line.
 
 4. **THUMBNAIL IMAGE PROMPT (Code Block):**
-   - Detailed Text-to-Image prompt for Midjourney / DALL-E / Flux / Ideogram.
-   - High CTR, visual intrigue, clean 2D doodle style with high contrast, centered focal subject, bold expressive stick figure / object, optional bold 2-3 word text hook, 16:9 aspect ratio.
-
-**After presenting Script + Metadata + Thumbnail, output this exact guidance:**
-
-> **Your script, metadata, and thumbnail prompt are ready.**
->
-> 1. Download `script_[topic].txt` and generate your voiceover in ElevenLabs or your voiceover tool.
-> 2. Generate a timestamped transcript using Descript, Premiere, Otter.ai, or YouTube Studio captions.
-> 3. Use the **Thumbnail Prompt** to generate your high-CTR video thumbnail.
-> 4. Copy the **Title, Description (with Sources), and Tags** directly into YouTube Studio.
->
-> **Format your timestamped script like this and paste it here when ready to generate image prompts for every scene:**
->
-> ```
-> [00:00] Tonight, when the sun goes down, you're going to flip a switch.
-> [00:05] Light will flood the room and you won't think twice about it.
-> [00:09] But for 99.9% of human history, that switch didn't exist.
-> ```
->
-> **Paste your timestamped script below to begin Stage 3.**
-
-Then stop. Wait for the user to paste their timestamped script.
+   - Generated using the selected aesthetic preset (Kurzgesagt, OverSimplified, Vox, etc.) via the `high-ctr-thumbnail` system.
+   - High CTR visual tension, high-contrast palette, optional bold 2–3 word text hook, 16:9 aspect ratio.
 
 ---
 
-## ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## STAGE 3 — GENERATE IMAGE PROMPTS FOR EVERY TIMESTAMP
-## ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+### C. AUTOMATIC 4-PANEL IMAGE PROMPT GENERATION (1 Prompt Per Paragraph):
+Saved to `channel_X/video_XX_topic/image_prompts.txt`:
 
-Once the user pastes their timestamped script, generate one detailed text-to-image prompt for every single timestamp line.
+For **every single paragraph** of the script, generate one comprehensive 4-panel symmetrical prompt:
+- **Format:** `01. [Paragraph 1 Theme] [Style Anchor], symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left: ...] [Panel 2 Top-Right: ...] [Panel 3 Bottom-Left: ...] [Panel 4 Bottom-Right: ...], [Style Lock], 16:9 aspect ratio.`
+- **Numbering:** Sequentially numbered (`01.`, `02.`, ... `28.`).
+- **Separation:** Each prompt is separated by a blank line.
+- **Style Consistency:** Uses the chosen style anchor and style lock throughout all prompts.
+- **Visual Continuity:** Follows the conceptual evolution of the paragraph closely.
 
-### IMAGE PROMPT RULES:
-1. Every prompt must begin with its timestamp: `[00:00]`
-2. Every prompt starts with style anchor: *"Hand-drawn 2D doodle cartoon animation, flat colors, bold black outlines, slightly imperfect sketchy marker lines,"*
-3. Every prompt ends with style lock: *"no gradients, no shadows, no textures, no photorealism, no 3D, 16:9 aspect ratio, educational YouTube explainer doodle style."*
-4. Translate narration into vivid visual stick figure scenes, diagrams, labeled arrows, or expressive objects.
-5. Match tone to solid background colors (White, Orange, Green, Blue, Tan).
-6. Hold visual continuity across consecutive timestamps when narrating the same point.
+---
 
-### DELIVERY IN BATCHES OF 20:
-- Deliver prompts in batches of up to 20 per copyable code block.
-- Prompt user with: `Reply "next" for the next 20 prompts.` until all timestamps are complete.
-- When finished, offer to compile all prompts into `image_prompts_[topic].txt`.
+**After presenting Script + Metadata + Image Prompts, output this exact guidance:**
+
+> **Everything is generated and ready for parallel production!**
+>
+> 1. **Voiceover & Subtitle:** Input `script.txt` into ElevenLabs/TTS to generate `vo.mp3` and `timestamp.lrc`.
+> 2. **AI Image Generation:** Generate all 4-panel images from `image_prompts.txt` and place them into `images/`.
+> 3. **Thumbnail:** Generate cover using the **Thumbnail Prompt** from `metadata.txt`.
+> 4. **Render:** Run `./render.sh [channel_x/video_xx]` to upscale with Real-CUGAN, slice into panels, and render with WebCodecs!
 
 ---
 
