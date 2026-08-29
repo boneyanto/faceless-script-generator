@@ -70,7 +70,7 @@ All 3 deliverables must be produced and saved into the video's dedicated folder 
 
 ---
 
-### A. NARRATION SCRIPT RULES (Guaranteed 8+ Minutes Duration):
+### A. NARRATION SCRIPT RULES (Guaranteed 8+ Minutes & High-Retention Architecture):
 - **Duration Requirement:** Minimum 8 minutes voiceover length (target 8–12 minutes).
 - **Paragraph Count:** Must contain **at least 26 to 35 paragraphs**.
 - **Strict Paragraph Rule:** Divide the entire script into distinct paragraphs. **Every single paragraph MUST contain between 40 and 50 words.**
@@ -78,8 +78,12 @@ All 3 deliverables must be produced and saved into the video's dedicated folder 
 - **Format:** Pure narration only — no headers, no bullet points, no visual cues, no stage directions, no parenthetical notes inside the script file/content.
 - **Voice:** Calm, intelligent, 2nd-person throughout ("you", "your brain", "your ancestors").
 - **Credible Sources:** Include at least 3-4 named scientific studies, books, or historical records woven naturally into the narration.
-- **Opening:** High-retention hook within the first paragraph.
-- **Ending:** Final paragraph echoes the opening line with a profound reframe.
+
+**Structural Retention Laws for Narration:**
+1. **Paragraph 1 (The 0–15s Hook):** Opens with a visceral physical sensation, provocative contradiction, or high-stakes pattern interrupt.
+2. **Mid-Roll Paragraph (~50-60% Mark — Organic Micro-CTA):** Weaves a natural, relatable conversational prompt inviting viewers to comment a specific keyword or share their experience (e.g., *"If your brain has ever woke you up at 3 AM in a panic, type '3AM' in the comments..."*).
+3. **Penultimate Paragraph (Value-Driven Subscribe CTA):** Invites viewers to subscribe by framing it as a biological/intellectual upgrade.
+4. **Final Paragraph (Binge-Watching End-Screen Loop):** Seamlessly bridges into the next episode of the channel's 30-day series with an intriguing cliffhanger (strictly forbidden to use drop-off phrases like "thanks for watching" or "goodbye").
 
 **Script Deliverable:**
 Saved as plain-text file `channel_X/video_XX_topic/script.txt` (paragraphs separated by a blank line).
@@ -98,14 +102,18 @@ Saved to `channel_X/video_XX_topic/metadata.txt`:
    - **Credible Sources & References:** Explicit list of real papers, books, or scientific journals referenced in the script (e.g., *Nature, Journal of Anthropological Sciences, Dr. Jane Doe (2021)*).
    - **Call to Action & Hashtags:** 15–20 relevant hashtags on a single line.
 
-3. **VIRAL VIDEO TAGS (Code Block):**
+3. **PINNED COMMENT TEMPLATE (Code Block):**
+   - A ready-to-use provocative discussion starter for the creator to pin at the top of YouTube comments to drive initial algorithm engagement.
+
+4. **RECOMMENDED NEXT VIDEO (END SCREEN CARD) (Code Block):**
+   - Exact title and topic from the 30-day plan to link on the YouTube End-Screen video element.
+
+5. **VIRAL VIDEO TAGS (Code Block):**
    - 25–40 comma-separated SEO tags on a single line.
 
-4. **THUMBNAIL IMAGE PROMPT (Code Block):**
-   - Generated using the selected aesthetic preset (Kurzgesagt, OverSimplified, Vox, etc.) via the `high-ctr-thumbnail` system.
+6. **THUMBNAIL IMAGE PROMPT (Code Block):**
+   - Generated using the selected aesthetic preset (Kurzgesagt, OverSimplified, Vox, Claymation, etc.) via the `high-ctr-thumbnail` system.
    - High CTR visual tension, high-contrast palette, optional bold 2–3 word text hook, 16:9 aspect ratio.
-
----
 
 ---
 
@@ -122,14 +130,19 @@ Saved to `channel_X/video_XX_topic/image_prompts.txt`:
    - **Panel 3 (Bottom-Left): Narrative Dynamic Action / Historical Contrast** (Depicts dynamic movement, past vs. present juxtaposition, or conflict).
    - **Panel 4 (Bottom-Right): Climax / Resolution / Visual Metaphor** (Punchline takeaway, symbolic conclusion, or dramatic visual payoff).
 
-3. **Physical Action Grounding (No Abstract Words):**
-   - Translate all emotional or narrative concepts into **concrete physical body language and mechanical interactions** (e.g., instead of "character feels stressed", write "character slouched heavily at wooden desk with head in hands and tensed shoulders").
-   - Eliminate anatomical glitches: ensure clean single characters with proper posture, avoiding duplicate limbs or unwanted background figures.
+3. **Engagement Visual Staging:**
+   - **Hook Panel (01):** High emotional tension and visual contrast to halt viewer scrolling in the first 3 seconds.
+   - **Micro-CTA Panel (Mid-Roll):** Subtle fourth-wall break with character pointing downward toward glowing comment bubble.
+   - **End-Screen Loop Panel (Final):** Composition framed with rule of thirds leaving the right quadrant open for the YouTube End-Screen Video Card overlay, with character gesturing toward the next video.
 
-4. **Clean Canvas Rule (Zero Text on Video Panels):**
+4. **Physical Action Grounding (No Abstract Words):**
+   - Translate all emotional or narrative concepts into **concrete physical body language and mechanical interactions** (e.g., write "character slouched heavily at wooden desk with head in hands and tensed shoulders").
+   - Eliminate anatomical glitches: clean single characters with proper posture, avoiding duplicate limbs.
+
+5. **Clean Canvas Rule (Zero Text on Video Panels):**
    - All 4 video panels must be 100% free of text, letters, watermarks, and typography overlays (text hooks are reserved strictly for the YouTube Thumbnail).
 
-5. **Prompt Format & Delivery:**
+6. **Prompt Format & Delivery:**
    - **Format:** `01. [Style Anchor], [Character Lock], symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left (Wide Shot): ...] [Panel 2 Top-Right (Medium/Diagram): ...] [Panel 3 Bottom-Left (Dynamic Action): ...] [Panel 4 Bottom-Right (Climax/Metaphor): ...], [Style Lock], no text, no words, 16:9 aspect ratio.`
    - **Numbering:** Sequentially numbered (`01.`, `02.`, ... `28.`).
    - **Separation:** Each prompt is separated by a blank line.
