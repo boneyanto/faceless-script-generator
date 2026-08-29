@@ -1,128 +1,125 @@
 ================================================================================
-   🎨 12 COMPLETE HIGH-CTR VISUAL STYLES & THUMBNAIL PRESETS (MASTER LIBRARY)
+   🎨 MASTER VISUAL STYLES & HIGH-CTR THUMBNAIL PRESETS LIBRARY
+   (Termasuk 5 ProvenTube Styles + 7 Curated Explainer Styles)
    Topik Uji: What Did Ancient Humans Actually Dream About?
 ================================================================================
 
-Daftar lengkap 12 visual style dengan Prompt 4-Panel Video dan Prompt Thumbnail
-yang telah dioptimasi secara khusus untuk Click-Through Rate (CTR) tinggi di YouTube.
+================================================================================
+BAGIAN 1: 5 PROVENTUBE STICK FIGURE & ANIMATION STYLES
+(Diadopsi dari Stick figure pipeline.docx)
+================================================================================
 
 --------------------------------------------------------------------------------
-1. STYLE 1: KURZGESAGT FLAT VECTOR (Sains Populer & Geometris Bersih)
+PT-1. HYPER-REALISTIC 3D CARTOON STICK FIGURE (Pixar Short / High-Budget Vibe)
+--------------------------------------------------------------------------------
+[Deskripsi]: Kepala putih bulat besar dengan outline hitam tebal, mata ekspresif bercahaya, tubuh stick figure dengan pakaian 3D bertekstur kain realistis, pencahayaan volumetrik dramatis, bokeh blur sinematik.
+
+[Prompt 4-Panel Video]:
+Hyper-realistic 3D cartoon animation style, Pixar short aesthetic, volumetric soft studio lighting, rich saturated colors, symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left (Wide Shot): cute 3D cartoon stick figure with round white head and detailed textured blue pajama sleeping in cozy 3D bedroom with warm bokeh lighting] [Panel 2 Top-Right (Medium Diagram): 3D translucent glowing anatomical brain floating with fiery amber neural sparks] [Panel 3 Bottom-Left (Dynamic Action): 3D stick figure hunter crouching in tall savannah grass under starry purple volumetric sky] [Panel 4 Bottom-Right (Climax Shot): glowing 3D predatory beast eyes lurking in dark volumetric jungle bushes], clean render, no text, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Hyper-realistic 3D cartoon YouTube thumbnail, Pixar quality lighting, split-screen composition: left side shows a sleeping 3D stick figure with glowing holographic thought bubble, right side shows a heroic 3D stick hunter confronting a colossal glowing beast silhouette with volumetric rim lighting, bold 3D extruded metallic typography "LOCKED IN STONE AGE", extreme visual depth, high CTR, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+PT-2. HAND-DRAWN SKETCH WATERCOLOR (Award-Winning Graphic Novel Vibe)
+--------------------------------------------------------------------------------
+[Deskripsi]: Garis pensil dan tinta tidak sempurna yang artistik, sapuan cat air (watercolor wash) halus dengan palet earthy/pastel muted, tekstur kertas gambar analog terlihat jelas.
+
+[Prompt 4-Panel Video]:
+Hand-drawn sketch watercolor illustration, graphic novel art style, loose confident ink outlines with soft watercolor wash fills, muted earthy palette (dusty pinks, sage, warm charcoal), visible paper grain, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): delicate watercolor sketch of a human figure asleep under a textured linen blanket] [Panel 2 Top-Right (Medium Reaction): expressive sketched character clutching head with loose watercolor distress waves] [Panel 3 Bottom-Left (Dynamic Action): lone sketched hunter walking through tall dry-brush savannah grass under watercolor crescent moon] [Panel 4 Bottom-Right (Climax Shot): ancestral spirit animals depicted in faint dreamy watercolor washes], artistic and poetic, no text, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Artistic watercolor sketch YouTube thumbnail, dramatic contrast between deep charcoal ink sketch and glowing warm golden-ochre watercolor washes, a solitary sketched stick figure facing an immense silhouetted ancient beast under a giant watercolor moon, bold hand-stamped distressed typography "ANCIENT MIND", high aesthetic appeal, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+PT-3. PURE CLASSIC HAND-DRAWN STICK FIGURE (Raw, Meme-Energy & Dark Humor)
+--------------------------------------------------------------------------------
+[Deskripsi]: Garis stickman tunggal ultra-minimalis, kepala lingkaran putih bersih dengan mata titik, coretan spidol/pensil warna datar, latar belakang polos dengan aksen coretan kasar.
+
+[Prompt 4-Panel Video]:
+Pure classic hand-drawn stick figure comic, raw marker and colored pencil style, ultra-minimal single black stick lines, simple round white heads with dot eyes, solid flat colored background, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): funny stickman sleeping in bed with floating ZZZ and drool mark] [Panel 2 Top-Right (Medium Diagram): stickman brain with cartoon lightning bolts and glowing red alert light bulb] [Panel 3 Bottom-Left (Dynamic Action): stickman caveman running frantically with funny flailing arms from a goofy stick tiger] [Panel 4 Bottom-Right (Climax Shot): tribe of funny stickmen celebrating around a simple orange campfire], clean humorous cartoon, no text, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Pure classic stick figure YouTube thumbnail, hilarious exaggerated stickman with giant wide eyes and screaming mouth running for his life from a goofy drawn sabertooth tiger, bold bright yellow background with black radial speed lines, large bold red and black hand-drawn ALL CAPS text "WHY WE PANIC!", high visual energy, high CTR, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+PT-4. CLEAN FLAT 2D CARTOON ANIMATION (Professional Explainer Animation)
+--------------------------------------------------------------------------------
+[Deskripsi]: Gaya kartun 2D bersih dengan garis hitam tegas seragam, warna datar solid tanpa gradien atau bayangan, perspektif geometris akurat sekelas seri animasi TV profesional.
+
+[Prompt 4-Panel Video]:
+Clean flat 2D cartoon animation style, professional explainer aesthetic, uniform bold black outlines, solid saturated flat colors, zero gradients, zero shading, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): clean 2D modern stick figure sleeping in minimalist blue bedroom] [Panel 2 Top-Right (Medium Diagram): crisp geometric 2D brain cross-section highlighting orange amygdala zone] [Panel 3 Bottom-Left (Dynamic Action): 2D prehistoric hunter holding spear in green savannah] [Panel 4 Bottom-Right (Climax Shot): glowing yellow cat eyes watching from clean flat bush silhouettes], crisp vector cartoon, no text, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Clean flat 2D cartoon YouTube thumbnail, high-contrast bold vector illustration, split frame showing modern stick figure bathed in blue smartphone glare vs ancient caveman holding flaming torch, bold flat yellow ALL CAPS text "300,000 YEARS OLD?", solid dark navy background, clean and punchy, 16:9 aspect ratio.
+
+
+--------------------------------------------------------------------------------
+PT-5. DETAILED EDITORIAL FLAT ILLUSTRATION (Serious History & Documentary)
+--------------------------------------------------------------------------------
+[Deskripsi]: Karakter berproporsi tubuh nyata dengan pakaian berlapis detail, gaya ilustrasi editorial buku teks sejarah berkelas, bayangan datar satu arah (flat directional shading), palet elegan khaki & slate-blue.
+
+[Prompt 4-Panel Video]:
+Detailed editorial flat illustration, premium documentary and historical textbook art style, clean linework with flat directional shading, sophisticated slate-blue and khaki-tan palette, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): detailed editorial human figure sleeping beside modern architectural window] [Panel 2 Top-Right (Medium Diagram): stylized anatomical brain mapping chart with neural frequency waves] [Panel 3 Bottom-Left (Dynamic Action): ancient hunter-gatherer clan traversing rugged prehistoric terrain with authentic leather pouches] [Panel 4 Bottom-Right (Climax Shot): comparative historical chart showing human skull evolution against starry sky], educational elegance, no text, 16:9 aspect ratio.
+
+[Prompt Thumbnail YouTube]:
+Detailed editorial illustration YouTube thumbnail, premium dark slate-blue background, central hyper-detailed stylized human brain with glowing gold data connections and ancient cave art glyphs, bold elegant golden-yellow serif typography "THE SURVIVAL CODE", high editorial credibility, 16:9 aspect ratio.
+
+
+================================================================================
+BAGIAN 2: CURATED VIRAL EXPLAINER STYLES (Kurzgesagt, Vox, Retro, Pixel, Clay)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. KURZGESAGT FLAT VECTOR (Sains Populer & Geometris Vibrant)
 --------------------------------------------------------------------------------
 [Prompt 4-Panel Video]:
-Vibrant 2D flat vector illustration, Kurzgesagt educational art style, smooth clean silhouettes, bold geometric shapes, rich contrast color palette, symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left: cozy modern human character sleeping peacefully in a minimalist blue bedroom] [Panel 2 Top-Right: cross-section diagram of a glowing brain with amygdala lit up in neon orange fire] [Panel 3 Bottom-Left: prehistoric human with spear crouching in tall savannah grass under starry purple sky] [Panel 4 Bottom-Right: glowing yellow predator eyes lurking in dark geometric bushes], clean solid color blocks, no photorealism, no 3D render, 16:9 aspect ratio.
+Vibrant 2D flat vector illustration, Kurzgesagt educational art style, smooth clean silhouettes, bold geometric shapes, rich contrast color palette, symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left (Wide Shot): cozy modern human character sleeping peacefully in a minimalist blue bedroom] [Panel 2 Top-Right (Medium Diagram): cross-section diagram of a glowing brain with amygdala lit up in neon orange fire] [Panel 3 Bottom-Left (Dynamic Action): prehistoric human with spear crouching in tall savannah grass under starry purple sky] [Panel 4 Bottom-Right (Climax Shot): glowing yellow predator eyes lurking in dark geometric bushes], clean solid color blocks, no gradients, no photorealism, no text, 16:9 aspect ratio.
 
 [Prompt Thumbnail YouTube]:
 Kurzgesagt art style YouTube thumbnail, vibrant flat geometric vector illustration, split screen composition: left side shows a sleeping modern character with a glowing cosmic thought bubble, right side shows an ancient hunter confronting a giant glowing prehistoric beast silhouette, high contrast neon cyan and golden yellow color palette, bold 3D flat text at top "NIGHTMARE OR SURVIVAL?", rule of thirds, high click-through rate, 16:9 aspect ratio.
 
 
 --------------------------------------------------------------------------------
-2. STYLE 2: OVERSIMPLIFIED COMIC (Kartun Sejarah Ekspresif & Lucu)
+2. EDITORIAL INFOGRAPHIC / VOX (Modern, Isometrik & Ilmiah)
 --------------------------------------------------------------------------------
 [Prompt 4-Panel Video]:
-2D OverSimplified cartoon history style, thick bold black outlines, simple expressive comic characters with funny exaggerated facial expressions, flat bright colors, symmetrical 4-panel 2x2 comic layout: [Panel 1 Top-Left: funny cartoon stickman sleeping in bed with drool and ZZZ floating up] [Panel 2 Top-Right: ancient caveman running in panic with wide eyes from an angry cartoon sabertooth tiger] [Panel 3 Bottom-Left: caveman character scratching head looking confused with huge question marks] [Panel 4 Bottom-Right: prehistoric tribe cheering around a crackling campfire], white and solid primary color background, clean comic art, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-OverSimplified style YouTube thumbnail, hilarious exaggerated cartoon illustration, a terrified caveman running for his life with giant eyes while a goofy sabertooth tiger chases him with an open mouth, large bold red and yellow hand-lettered text "WHY WE PANIC!", solid bright yellow background with radial speed lines, high visual energy, high CTR YouTube cover, 16:9 aspect ratio.
-
-
---------------------------------------------------------------------------------
-3. STYLE 3: EDITORIAL INFOGRAPHIC / VOX (Modern, Isometrik & Ilmiah)
---------------------------------------------------------------------------------
-[Prompt 4-Panel Video]:
-Modern editorial infographic illustration, Vox and PolyMatter explainer style, clean isometric vector art, sophisticated navy blue and warm cream color palette, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left: clean isometric human figure in deep sleep with brain frequency wave graph above] [Panel 2 Top-Right: stylized anatomical 3D brain map highlighting the limbic system in glowing coral orange] [Panel 3 Bottom-Left: topographic prehistoric terrain map showing ancient migration paths and predator zones] [Panel 4 Bottom-Right: sleek comparative data chart comparing modern sleep cycles to hunter-gatherer sleep patterns], technical elegance, minimalist, 16:9 aspect ratio.
+Modern editorial infographic illustration, Vox and PolyMatter explainer style, clean isometric vector art, sophisticated navy blue and warm cream color palette, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left (Wide Shot): clean isometric human figure in deep sleep with brain frequency wave graph above] [Panel 2 Top-Right (Medium Diagram): stylized anatomical 3D brain map highlighting the limbic system in glowing coral orange] [Panel 3 Bottom-Left (Dynamic Action): topographic prehistoric terrain map showing ancient migration paths and predator zones] [Panel 4 Bottom-Right (Climax Shot): sleek comparative data chart comparing modern sleep cycles to hunter-gatherer sleep patterns], technical elegance, minimalist, no text, 16:9 aspect ratio.
 
 [Prompt Thumbnail YouTube]:
 Vox style YouTube thumbnail, premium editorial infographic design, high-contrast dark navy background, large hyper-detailed 3D glowing anatomical brain cross-section floating in center with glowing neural pathways, overlay technical measuring grid and bold yellow typography "THE 300,000 YEAR BUG", ultra clean minimalist graphic design, 16:9 aspect ratio.
 
 
 --------------------------------------------------------------------------------
-4. STYLE 4: DARK MYTHIC WOODCUT & GOLD FOIL (Ukiran Kuno & Aksen Emas)
+3. RETRO 1950s MID-CENTURY UPA (Kartun Edukasi Vintage Atom Age)
 --------------------------------------------------------------------------------
 [Prompt 4-Panel Video]:
-Vintage linocut woodblock print illustration, detailed black ink cross-hatching, antique parchment paper background, mythic anthropology art style, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: woodcut engraving of a sleeping ancient human under a detailed crescent moon] [Panel 2 Top-Right: roaring prehistoric beast rendered in dramatic woodblock black and white contrast] [Panel 3 Bottom-Left: ancient tribe performing fire ritual with embers floating into the sky] [Panel 4 Bottom-Right: ancestral spirits depicted as constellation star patterns], aged texture, historical archive aesthetic, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-Antique dark mythic woodcut engraving YouTube thumbnail, high-contrast black ink etching on dark obsidian parchment, illuminated with glowing metallic gold foil inlay accents, a colossal ancient horned beast skull centered in the frame with glowing amber flames burning inside its eye sockets, a tiny lone human holding a golden torch staring up in awe, bold distressed gold serif typography at top "FORBIDDEN MEMORY", extreme visual depth, viral dark fantasy aesthetic, 16:9 aspect ratio.
-
-
---------------------------------------------------------------------------------
-5. STYLE 5: RETRO 1950s MID-CENTURY UPA (Kartun Edukasi Vintage Atom Age)
---------------------------------------------------------------------------------
-[Prompt 4-Panel Video]:
-1950s mid-century modern educational cartoon style, UPA animation aesthetic, retro pastel color palette of teal, mustard yellow, coral red, and beige, symmetrical 4-panel 2x2 comic layout: [Panel 1 Top-Left: retro 1950s stylized cartoon character sleeping with mid-century bedroom decor] [Panel 2 Top-Right: abstract geometric cartoon brain with gears and clockwork dials turning] [Panel 3 Bottom-Left: charming retro caveman holding stone axe in front of stylized geometric trees] [Panel 4 Bottom-Right: playful cartoon sabertooth cat with big smile], subtle vintage paper grain, 16:9 aspect ratio.
+1950s mid-century modern educational cartoon style, UPA animation aesthetic, retro pastel color palette of teal, mustard yellow, coral red, and beige, symmetrical 4-panel 2x2 comic layout: [Panel 1 Top-Left (Wide Shot): retro 1950s stylized cartoon character sleeping with mid-century bedroom decor] [Panel 2 Top-Right (Medium Diagram): abstract geometric cartoon brain with gears and clockwork dials turning] [Panel 3 Bottom-Left (Dynamic Action): charming retro caveman holding stone axe in front of stylized geometric trees] [Panel 4 Bottom-Right (Climax Shot): playful cartoon sabertooth cat with big smile], subtle vintage paper grain, no text, 16:9 aspect ratio.
 
 [Prompt Thumbnail YouTube]:
 1950s atomic age cartoon YouTube thumbnail, mid-century retro UPA art style, charming vintage scientist mascot pointing an arrow at a sleeping caveman thought bubble, bold retro typography in mustard yellow "DREAMING IN 10,000 BC", flat abstract geometric background shapes in teal and coral, nostalgic clean aesthetic, 16:9 aspect ratio.
 
 
 --------------------------------------------------------------------------------
-6. STYLE 6: HYPER-CINEMATIC MINIMALIST SILHOUETTE (Aperture / Interstellar)
+4. ISOMETRIC PIXEL ART DIORAMA (Retro Gaming & Micro-Voxel)
 --------------------------------------------------------------------------------
 [Prompt 4-Panel Video]:
-Moody cinematic vector art, Aperture and Pursuit of Wonder style, deep midnight black and indigo background, ethereal glowing neon highlights in amber and electric blue, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left: lone human silhouette lying on edge of a cliff gazing at cosmic starry vortex] [Panel 2 Top-Right: glowing geometric human brain floating in dark void with golden synapse sparks] [Panel 3 Bottom-Left: prehistoric hunter silhouette holding spear against giant glowing harvest moon] [Panel 4 Bottom-Right: modern person and ancient ancestor standing back-to-back in silhouette], deep atmospheric lighting, philosophical, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-Cinematic minimalist YouTube thumbnail, Aperture and Interstellar atmosphere, pure pitch-black matte background with piercing golden-amber solar rim-light, a solitary human silhouette standing on a floating monolith looking up at an immense surreal celestial eye formed by swirling golden stardust and nebulae, high dramatic scale contrast, bold clean modern typography "BEFORE WE WOKE UP", high CTR psychological tension, 16:9 aspect ratio.
-
-
---------------------------------------------------------------------------------
-7. STYLE 7: ISOMETRIC PIXEL ART DIORAMA (Retro Gaming & Micro-Voxel)
---------------------------------------------------------------------------------
-[Prompt 4-Panel Video]:
-Detailed 32-bit isometric pixel art diorama, nostalgic high-end game aesthetic, vibrant pastel color palette, clean grid perspective, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: isometric pixel art bedroom with sleeping character and tiny pixel floating ZZZ] [Panel 2 Top-Right: cross-section pixel diorama of a glowing 8-bit human brain with pulsating red alert pixel tiles] [Panel 3 Bottom-Left: prehistoric savannah isometric diorama with tiny voxel hunter holding wooden spear] [Panel 4 Bottom-Right: voxel sabertooth tiger hiding behind isometric pixel bushes with glowing eyes], clean pixel edges, 16:9 aspect ratio.
+Detailed 32-bit isometric pixel art diorama, nostalgic high-end game aesthetic, vibrant pastel color palette, clean grid perspective, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): isometric pixel art bedroom with sleeping character and tiny pixel floating ZZZ] [Panel 2 Top-Right (Medium Diagram): cross-section pixel diorama of a glowing 8-bit human brain with pulsating red alert pixel tiles] [Panel 3 Bottom-Left (Dynamic Action): prehistoric savannah isometric diorama with tiny voxel hunter holding wooden spear] [Panel 4 Bottom-Right (Climax Shot): voxel sabertooth tiger hiding behind isometric pixel bushes with glowing eyes], clean pixel edges, no text, 16:9 aspect ratio.
 
 [Prompt Thumbnail YouTube]:
 Isometric pixel art YouTube thumbnail, stunning 3D micro-voxel diorama showing a split floating island: top half is a modern cozy room with neon glow, bottom half is a prehistoric cave with fire embers and a lurking pixel tiger, bold 8-bit arcade style typography "LOCKED IN STONE AGE", vibrant lighting, high click appeal, 16:9 aspect ratio.
 
 
 --------------------------------------------------------------------------------
-8. STYLE 8: MINIMALIST FLAT GOUACHE / EDITORIAL STORYBOOK (Jon Klassen Style)
+5. TACTILE CLAYMATION / STOP-MOTION CRAFT (Aardman Style 3D)
 --------------------------------------------------------------------------------
 [Prompt 4-Panel Video]:
-Minimalist editorial gouache painting, Jon Klassen and contemporary picture-book art style, textured dry brush strokes, warm muted earthy tones (terracotta, sage green, charcoal black, linen cream), symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: simple charming painted human figure curled up asleep under a textured linen blanket] [Panel 2 Top-Right: abstract painted human silhouette with glowing amber heart and brain] [Panel 3 Bottom-Left: primitive hunter figure walking through sparse tall painted grass under a giant paper moon] [Panel 4 Bottom-Right: two dark silhouette animals watching quietly from behind textured trees], analog art feel, elegant matte finish, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-Minimalist storybook gouache painting YouTube thumbnail, striking contrast between deep charcoal black background and rich golden terracotta, a solitary stylized human figure facing an immense silhouetted ancient beast under a giant textured moon, bold hand-stamped editorial typography "THE SURVIVAL SIMULATOR", artistic and captivating, 16:9 aspect ratio.
-
-
---------------------------------------------------------------------------------
-9. STYLE 9: CYBER-ARCHAEOLOGY & NEON HOLOGRAM (Futuristic Sci-Fi HUD)
---------------------------------------------------------------------------------
-[Prompt 4-Panel Video]:
-High-tech blueprint vector illustration, glowing holographic schematic art style, dark obsidian background with glowing electric cyan and amber laser vector lines, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left: wireframe holographic human body in sleep mode with biometric telemetry lines] [Panel 2 Top-Right: 3D holographic wireframe brain schematic highlighting the neural amygdala sector in intense glowing orange] [Panel 3 Bottom-Left: tactical radar-style topographic map tracking prehistoric predator movement vectors] [Panel 4 Bottom-Right: futuristic comparison HUD comparing stone-age DNA code to modern neural architecture], ultra precise digital schematics, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-High-tech cyber-archaeology YouTube thumbnail, deep pitch-black void with glowing 3D translucent wireframe hologram, a floating human brain and ancient DNA double-helix glowing in neon electric cyan and laser magenta, biometric diagnostic telemetry grids floating around the subject, high contrast laser lighting, bold glowing neon typography "PRIMITIVE CODE DETECTED", ultra-clean commercial sci-fi aesthetic, 16:9 aspect ratio.
-
-
---------------------------------------------------------------------------------
-10. STYLE 10: NEO-UKIYO-E & DYNAMIC SUMI BRUSH (Japanese Mythic Ink)
---------------------------------------------------------------------------------
-[Prompt 4-Panel Video]:
-Traditional Japanese Ukiyo-e woodblock print and Sumi-e ink wash style, fluid calligraphic ink brush outlines, textured aged washi paper background, indigo blue and vermilion red accents, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: ancient human sleeping peacefully amidst swirling traditional cloud patterns] [Panel 2 Top-Right: dynamic Japanese dragon/beast spirit emerging from stylized dream smoke] [Panel 3 Bottom-Left: warrior hunter in traditional stance holding spear against rising sun wave] [Panel 4 Bottom-Right: glowing spirit lanterns floating across misty dark bamboo grove], authentic woodblock print aesthetic, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-Dynamic Neo-Ukiyo-e Japanese art style YouTube thumbnail, dramatic bold sumi-e black ink brush strokes, giant glowing crimson-red sun in the background, an enormous mythical shadowy beast rising out of swirling dark storm clouds confronting a lone courageous warrior with a glowing golden spear, high visual energy, vibrant vermilion red and deep indigo color contrast, bold brush typography "THE FIRST NIGHT", 16:9 aspect ratio.
-
-
---------------------------------------------------------------------------------
-11. STYLE 11: TACTILE CLAYMATION / STOP-MOTION CRAFT (Aardman 3D)
---------------------------------------------------------------------------------
-[Prompt 4-Panel Video]:
-Charming claymation stop-motion plasticine art style, Aardman inspired miniature tactile craft, handmade clay texture with subtle thumbprint marks, soft studio macro lighting, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: cute handmade clay character sleeping under a tiny fabric quilt in clay bed] [Panel 2 Top-Right: colorful sculpted plasticine human brain with funny cartoon alarm bell ringing] [Panel 3 Bottom-Left: chunky clay caveman holding wooden spear in front of miniature papercraft trees] [Panel 4 Bottom-Right: goofy handcrafted clay sabertooth tiger peeking behind felt bush], depth of field, adorable tactile animation feel, 16:9 aspect ratio.
+Charming claymation stop-motion plasticine art style, Aardman inspired miniature tactile craft, handmade clay texture with subtle thumbprint marks, soft studio macro lighting, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): cute handmade clay character sleeping under a tiny fabric quilt in clay bed] [Panel 2 Top-Right (Medium Diagram): colorful sculpted plasticine human brain with funny cartoon alarm bell ringing] [Panel 3 Bottom-Left (Dynamic Action): chunky clay caveman holding wooden spear in front of miniature papercraft trees] [Panel 4 Bottom-Right (Climax Shot): goofy handcrafted clay sabertooth tiger peeking behind felt bush], depth of field, adorable tactile animation feel, no text, 16:9 aspect ratio.
 
 [Prompt Thumbnail YouTube]:
 High-detail claymation stop-motion YouTube thumbnail, hyper-charming sculpted plasticine scene with soft studio rim lighting, a worried clay caveman staring wide-eyed at a giant cartoon clay tiger paw stepping into frame, bold 3D extruded clay typography "STILL UNTOUCHED", unique high-stopping power YouTube cover, 16:9 aspect ratio.
-
-
---------------------------------------------------------------------------------
-12. STYLE 12: 1990s RETRO DARK ANIME (Ghibli / Akira Key Visual)
---------------------------------------------------------------------------------
-[Prompt 4-Panel Video]:
-Classic 1980s vintage anime cel animation style, Studio Ghibli and retro sci-fi OVA aesthetic, hand-painted gouache backgrounds, soft warm cel shading, subtle retro VHS film grain, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left: cozy retro anime character sleeping by an open window under starlit sky] [Panel 2 Top-Right: glowing mystical anime neural orb showing visions of prehistoric nature] [Panel 3 Bottom-Left: young anime hunter walking through lush ancient forest with spear] [Panel 4 Bottom-Right: majestic giant ancient animal spirit watching from mountain ridge], nostalgic cinematic lighting, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-1990s retro dark anime key-visual YouTube thumbnail, high-intensity vintage anime aesthetic, dramatic close-up of a determined young anime protagonist's face in the dark with one glowing electric blue eye reflecting a roaring sabertooth beast in the pupil, background shows a split between a futuristic neon city and an ancient red-sky desert wasteland, bold nostalgic retro anime typography "ANCIENT PROTOCOL", cinematic anime movie poster lighting, 16:9 aspect ratio.
 
 ================================================================================
