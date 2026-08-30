@@ -59,7 +59,7 @@ TARGET_DIR="${TARGET_DIR}" .venv/bin/python process_images.py "$@"
 # 5. Run WebCodecs Video Rendering Engine (No FFmpeg)
 echo ""
 echo "🚀 [Step 2/2] Rendering Video with WebCodecs API (OffscreenCanvas + Zero-Copy)..."
-TARGET_DIR="${TARGET_DIR}" node render_engine.mjs
+ANIMATION_MODE="${2:-${ANIMATION_MODE:-sketch}}" TARGET_DIR="${TARGET_DIR}" node render_engine.mjs
 
 echo ""
 echo "============================================================"

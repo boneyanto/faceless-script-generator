@@ -4,6 +4,7 @@ import glob
 import subprocess
 import json
 import re
+import time
 from PIL import Image
 from mutagen.mp3 import MP3
 
@@ -30,6 +31,9 @@ if not input_images:
 force_reprocess = "--force" in sys.argv
 
 print(f"Found {len(input_images)} input images.")
+t_upscale_start = time.time()
+upscaled_count = 0
+cached_count = 0
 
 for idx, img_path in enumerate(input_images, 1):
     base_webp = f"img_{idx:02d}.webp"
@@ -37,9 +41,11 @@ for idx, img_path in enumerate(input_images, 1):
     temp_png = os.path.join(UPSCALED_DIR, f"temp_{idx:02d}.png")
     
     if os.path.exists(out_webp_path) and os.path.getsize(out_webp_path) > 0 and not force_reprocess:
-        print(f"[{idx}/{len(input_images)}] (Cached) {base_webp} already upscaled, skipping Real-CUGAN.")
+        cached_count += 1
+        print(f"[{idx}/{len(input_images)}] (Cached) {base_webp} already upscaled, skipping.")
         continue
 
+    t_single_start = time.time()
     print(f"[{idx}/{len(input_images)}] Real-CUGAN upscaling {os.path.basename(img_path)} -> {base_webp}...")
     cmd = [
         REALCUGAN_BIN,
@@ -58,9 +64,18 @@ for idx, img_path in enumerate(input_images, 1):
         im_4k.save(out_webp_path, "WEBP", quality=95)
     if os.path.exists(temp_png):
         os.remove(temp_png)
+    
+    upscaled_count += 1
+    t_single_elapsed = time.time() - t_single_start
+    t_total_so_far = time.time() - t_upscale_start
+    print(f"    ✓ Done in {t_single_elapsed:.2f}s (Total upscale elapsed: {t_total_so_far:.2f}s)")
+
+t_upscale_total = time.time() - t_upscale_start
+print(f"\n✨ Upscaling finished: {upscaled_count} upscaled, {cached_count} cached in {t_upscale_total:.2f}s")
 
 # 2. Symmetrically crop each 4-panel image into 4 quadrants with caching
 print("\nChecking 4-quadrant symmetric panels...")
+t_crop_start = time.time()
 panel_list = []
 
 for idx in range(1, len(input_images) + 1):
@@ -107,7 +122,8 @@ for idx in range(1, len(input_images) + 1):
             panel_list.append(panel_path)
             print(f"Saved: {panel_name} ({cropped.size[0]}x{cropped.size[1]})")
 
-print(f"\nAll {len(panel_list)} panels verified & ready.")
+t_crop_total = time.time() - t_crop_start
+print(f"\nAll {len(panel_list)} panels verified & ready in {t_crop_total:.2f}s.")
 
 # 3. Parse LRC and calculate chunk durations
 audio = MP3(VO_PATH)
@@ -122,6 +138,8 @@ with open(LRC_PATH, "r") as f:
             mins = int(match.group(1))
             secs = float(match.group(2))
             text = match.group(3).strip()
+            if not text:
+                continue
             total_sec = mins * 60 + secs
             timestamps.append({"time": total_sec, "text": text})
 
@@ -158,6 +176,7 @@ for i in range(len(timestamps)):
         
     chunks.append({
         "chunkIndex": chunk_idx,
+        "fullImage": f"img_{chunk_idx:02d}.webp",
         "startTime": round(start_time, 4),
         "endTime": round(end_time, 4),
         "duration": round(duration, 4),

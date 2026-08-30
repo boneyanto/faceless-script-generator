@@ -21,20 +21,9 @@ Hyper-realistic 3D cartoon animation style, Pixar short aesthetic, volumetric so
 Hyper-realistic 3D cartoon YouTube thumbnail, Pixar quality lighting, split-screen composition: left side shows a sleeping 3D stick figure with glowing holographic thought bubble, right side shows a heroic 3D stick hunter confronting a colossal glowing beast silhouette with volumetric rim lighting, bold 3D extruded metallic typography "LOCKED IN STONE AGE", extreme visual depth, high CTR, 16:9 aspect ratio.
 
 
---------------------------------------------------------------------------------
-PT-2. HAND-DRAWN SKETCH WATERCOLOR (Award-Winning Graphic Novel Vibe)
---------------------------------------------------------------------------------
-[Deskripsi]: Garis pensil dan tinta tidak sempurna yang artistik, sapuan cat air (watercolor wash) halus dengan palet earthy/pastel muted, tekstur kertas gambar analog terlihat jelas.
-
-[Prompt 4-Panel Video]:
-Hand-drawn sketch watercolor illustration, graphic novel art style, loose confident ink outlines with soft watercolor wash fills, muted earthy palette (dusty pinks, sage, warm charcoal), visible paper grain, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): delicate watercolor sketch of a human figure asleep under a textured linen blanket] [Panel 2 Top-Right (Medium Reaction): expressive sketched character clutching head with loose watercolor distress waves] [Panel 3 Bottom-Left (Dynamic Action): lone sketched hunter walking through tall dry-brush savannah grass under watercolor crescent moon] [Panel 4 Bottom-Right (Climax Shot): ancestral spirit animals depicted in faint dreamy watercolor washes], artistic and poetic, no text, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-Artistic watercolor sketch YouTube thumbnail, dramatic contrast between deep charcoal ink sketch and glowing warm golden-ochre watercolor washes, a solitary sketched stick figure facing an immense silhouetted ancient beast under a giant watercolor moon, bold hand-stamped distressed typography "ANCIENT MIND", high aesthetic appeal, 16:9 aspect ratio.
-
 
 --------------------------------------------------------------------------------
-PT-3. PURE CLASSIC HAND-DRAWN STICK FIGURE (Raw, Meme-Energy & Dark Humor)
+PT-2. PURE CLASSIC HAND-DRAWN STICK FIGURE (Raw, Meme-Energy & Dark Humor)
 --------------------------------------------------------------------------------
 [Deskripsi]: Garis stickman tunggal ultra-minimalis, kepala lingkaran putih bersih dengan mata titik, coretan spidol/pensil warna datar, latar belakang polos dengan aksen coretan kasar.
 
@@ -46,7 +35,7 @@ Pure classic stick figure YouTube thumbnail, hilarious exaggerated stickman with
 
 
 --------------------------------------------------------------------------------
-PT-4. CLEAN FLAT 2D CARTOON ANIMATION (Professional Explainer Animation)
+PT-3. CLEAN FLAT 2D CARTOON ANIMATION (Professional Explainer Animation)
 --------------------------------------------------------------------------------
 [Deskripsi]: Gaya kartun 2D bersih dengan garis hitam tegas seragam, warna datar solid tanpa gradien atau bayangan, perspektif geometris akurat sekelas seri animasi TV profesional.
 
@@ -57,40 +46,30 @@ Clean flat 2D cartoon animation style, professional explainer aesthetic, uniform
 Clean flat 2D cartoon YouTube thumbnail, high-contrast bold vector illustration, split frame showing modern stick figure bathed in blue smartphone glare vs ancient caveman holding flaming torch, bold flat yellow ALL CAPS text "300,000 YEARS OLD?", solid dark navy background, clean and punchy, 16:9 aspect ratio.
 
 
---------------------------------------------------------------------------------
-PT-5. DETAILED EDITORIAL FLAT ILLUSTRATION (Serious History & Documentary)
---------------------------------------------------------------------------------
-[Deskripsi]: Karakter berproporsi tubuh nyata dengan pakaian berlapis detail, gaya ilustrasi editorial buku teks sejarah berkelas, bayangan datar satu arah (flat directional shading), palet elegan khaki & slate-blue.
-
-[Prompt 4-Panel Video]:
-Detailed editorial flat illustration, premium documentary and historical textbook art style, clean linework with flat directional shading, sophisticated slate-blue and khaki-tan palette, symmetrical 4-panel 2x2 layout: [Panel 1 Top-Left (Wide Shot): detailed editorial human figure sleeping beside modern architectural window] [Panel 2 Top-Right (Medium Diagram): stylized anatomical brain mapping chart with neural frequency waves] [Panel 3 Bottom-Left (Dynamic Action): ancient hunter-gatherer clan traversing rugged prehistoric terrain with authentic leather pouches] [Panel 4 Bottom-Right (Climax Shot): comparative historical chart showing human skull evolution against starry sky], educational elegance, no text, 16:9 aspect ratio.
-
-[Prompt Thumbnail YouTube]:
-Detailed editorial illustration YouTube thumbnail, premium dark slate-blue background, central hyper-detailed stylized human brain with glowing gold data connections and ancient cave art glyphs, bold elegant golden-yellow serif typography "THE SURVIVAL CODE", high editorial credibility, 16:9 aspect ratio.
-
-
 ================================================================================
-BAGIAN 2: CURATED VIRAL EXPLAINER STYLES (Kurzgesagt, Vox, Retro, Pixel, Clay)
+BAGIAN 2: CURATED VIRAL EXPLAINER STYLES (Kurzgesagt, OverSimplified, Retro, Pixel, Clay)
 ================================================================================
 
 --------------------------------------------------------------------------------
 1. KURZGESAGT FLAT VECTOR (Sains Populer & Geometris Vibrant)
 --------------------------------------------------------------------------------
 [Prompt 4-Panel Video]:
-Vibrant 2D flat vector illustration, Kurzgesagt educational art style, smooth clean silhouettes, bold geometric shapes, rich contrast color palette, symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left (Wide Shot): cozy modern human character sleeping peacefully in a minimalist blue bedroom] [Panel 2 Top-Right (Medium Diagram): cross-section diagram of a glowing brain with amygdala lit up in neon orange fire] [Panel 3 Bottom-Left (Dynamic Action): prehistoric human with spear crouching in tall savannah grass under starry purple sky] [Panel 4 Bottom-Right (Climax Shot): glowing yellow predator eyes lurking in dark geometric bushes], clean solid color blocks, no gradients, no photorealism, no text, 16:9 aspect ratio.
+Vibrant 2D flat vector illustration, Kurzgesagt educational art style, smooth clean silhouettes, bold geometric shapes, rich contrast color palette, symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left (Wide Shot): cozy modern human character sleeping peacefully in a minimalist blue bedroom] [Panel 2 Top-Right (Medium Diagram): cross-section diagram of a glowing brain with amygdala lit up in neon orange fire] [Panel 3 Bottom-Left (Dynamic Action): prehistoric human with spear crouching in tall savannah grass  under starry purple sky] [Panel 4 Bottom-Right (Climax Shot): glowing yellow predator eyes lurking in dark geometric bushes], clean solid color blocks, no gradients, no photorealism, no text, 16:9 aspect ratio.
 
 [Prompt Thumbnail YouTube]:
 Kurzgesagt art style YouTube thumbnail, vibrant flat geometric vector illustration, split screen composition: left side shows a sleeping modern character with a glowing cosmic thought bubble, right side shows an ancient hunter confronting a giant glowing prehistoric beast silhouette, high contrast neon cyan and golden yellow color palette, bold 3D flat text at top "NIGHTMARE OR SURVIVAL?", rule of thirds, high click-through rate, 16:9 aspect ratio.
 
 
 --------------------------------------------------------------------------------
-2. EDITORIAL INFOGRAPHIC / VOX (Modern, Isometrik & Ilmiah)
+2. OVERSIMPLIFIED 2D COMIC ANIMATION (Ekspresif, Lucu, Sejarah & Viral)
 --------------------------------------------------------------------------------
+[Deskripsi]: Gaya kartun 2D khas OverSimplified dengan karakter ekspresif berkepala bulat, outline hitam tebal seragam (bold uniform black outlines), warna datar solid bernuansa hangat (earthy & warm tones), mimik wajah kocak & dramatis (mata melotot komikal, mulut teriak panik), serta penceritaan sejarah visual yang dinamis dan berenergi tinggi.
+
 [Prompt 4-Panel Video]:
-Modern editorial infographic illustration, Vox and PolyMatter explainer style, clean isometric vector art, sophisticated navy blue and warm cream color palette, symmetrical 4-panel 2x2 grid layout: [Panel 1 Top-Left (Wide Shot): clean isometric human figure in deep sleep with brain frequency wave graph above] [Panel 2 Top-Right (Medium Diagram): stylized anatomical 3D brain map highlighting the limbic system in glowing coral orange] [Panel 3 Bottom-Left (Dynamic Action): topographic prehistoric terrain map showing ancient migration paths and predator zones] [Panel 4 Bottom-Right (Climax Shot): sleek comparative data chart comparing modern sleep cycles to hunter-gatherer sleep patterns], technical elegance, minimalist, no text, 16:9 aspect ratio.
+OverSimplified 2D animation style, expressive funny historical comic illustration, uniform bold black outlines, clean flat saturated colors with warm earthy tones, symmetrical 4-panel 2x2 grid comic layout: [Panel 1 Top-Left (Wide Shot): funny bald cartoon character sleeping peacefully in a wooden bed with floating 'z z z z z' and drool mark] [Panel 2 Top-Right (Dynamic Action): terrified cartoon caveman in leopard pelt running frantically for his life from a ferocious cartoon sabertooth tiger chasing him out of a cave] [Panel 3 Bottom-Left (Medium Shot): puzzled cartoon caveman scratching his messy brown hair with giant floating question marks '?'] [Panel 4 Bottom-Right (Climax Shot): tribe of cheerful cartoon cavemen celebrating and raising their hands around a warm glowing campfire with floating text 'HURRAY! CHEER!'], clean 2D cartoon explainer aesthetic, 16:9 aspect ratio.
 
 [Prompt Thumbnail YouTube]:
-Vox style YouTube thumbnail, premium editorial infographic design, high-contrast dark navy background, large hyper-detailed 3D glowing anatomical brain cross-section floating in center with glowing neural pathways, overlay technical measuring grid and bold yellow typography "THE 300,000 YEAR BUG", ultra clean minimalist graphic design, 16:9 aspect ratio.
+OverSimplified style YouTube thumbnail, hilarious exaggerated high-energy cartoon illustration, a terrified caveman with giant popping wide eyes and screaming mouth running frantically holding a club while chased by a ferocious leaping sabertooth tiger, dynamic black comic action speed lines on a vibrant bright yellow background, bold red and yellow 3D bubble comic typography "WHY WE PANIC!", high visual contrast, extreme emotion, maximum click-through rate, 16:9 aspect ratio.
 
 
 --------------------------------------------------------------------------------
