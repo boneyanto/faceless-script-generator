@@ -23,14 +23,26 @@ REALCUGAN_BIN = os.path.join(REALCUGAN_DIR, "realcugan-ncnn-vulkan")
 os.makedirs(UPSCALED_DIR, exist_ok=True)
 os.makedirs(PANELS_DIR, exist_ok=True)
 
-# 1. Upscale images using Real-CUGAN CLI with smart caching
+# 1. Image preparation & upscaling with smart caching
+# Modes: 'fast_2k' (default, 0.3s/img via high-res Lanczos), 'cugan_2x', 'cugan_4x', 'none'
+UPSCALE_MODE = os.environ.get("UPSCALE_MODE", "fast_2k").lower()
+for arg in sys.argv:
+    if arg in ["--fast-2k", "--2k"]:
+        UPSCALE_MODE = "fast_2k"
+    elif arg in ["--cugan-2x", "--cugan2x"]:
+        UPSCALE_MODE = "cugan_2x"
+    elif arg in ["--cugan-4x", "--cugan4x", "--cugan"]:
+        UPSCALE_MODE = "cugan_4x"
+    elif arg in ["--no-upscale", "--none"]:
+        UPSCALE_MODE = "none"
+
 input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.png")))
 if not input_images:
     input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.webp"))) + sorted(glob.glob(os.path.join(IMAGES_DIR, "*.jpg")))
 
 force_reprocess = "--force" in sys.argv
 
-print(f"Found {len(input_images)} input images.")
+print(f"Found {len(input_images)} input images. Upscale Mode: [{UPSCALE_MODE}]")
 t_upscale_start = time.time()
 upscaled_count = 0
 cached_count = 0
@@ -42,36 +54,65 @@ for idx, img_path in enumerate(input_images, 1):
     
     if os.path.exists(out_webp_path) and os.path.getsize(out_webp_path) > 0 and not force_reprocess:
         cached_count += 1
-        print(f"[{idx}/{len(input_images)}] (Cached) {base_webp} already upscaled, skipping.")
+        print(f"[{idx}/{len(input_images)}] (Cached) {base_webp} ready, skipping.")
         continue
 
     t_single_start = time.time()
-    print(f"[{idx}/{len(input_images)}] Real-CUGAN upscaling {os.path.basename(img_path)} -> {base_webp}...")
-    cmd = [
-        REALCUGAN_BIN,
-        "-i", os.path.abspath(img_path),
-        "-o", os.path.abspath(temp_png),
-        "-m", "models-se",
-        "-s", "4",
-        "-n", "0",
-        "-f", "png"
-    ]
-    subprocess.run(cmd, cwd=REALCUGAN_DIR, check=True)
     
-    # Convert PNG and resize to standard 4K UHD (3840x2160) for optimal rendering speed
-    with Image.open(temp_png) as im:
-        im_4k = im.resize((3840, 2160), Image.Resampling.LANCZOS)
-        im_4k.save(out_webp_path, "WEBP", quality=95)
-    if os.path.exists(temp_png):
-        os.remove(temp_png)
+    if UPSCALE_MODE == "fast_2k":
+        print(f"[{idx}/{len(input_images)}] Fast 2K Lanczos processing {os.path.basename(img_path)} -> {base_webp}...")
+        with Image.open(img_path) as im:
+            # Scale to crisp 2K (2560x1440) for 1080p canvas with drift margin
+            im_2k = im.resize((2560, 1440), Image.Resampling.LANCZOS)
+            im_2k.save(out_webp_path, "WEBP", quality=95)
+            
+    elif UPSCALE_MODE == "none":
+        print(f"[{idx}/{len(input_images)}] Converting {os.path.basename(img_path)} -> {base_webp} (Original Res)...")
+        with Image.open(img_path) as im:
+            im.save(out_webp_path, "WEBP", quality=95)
+            
+    elif UPSCALE_MODE == "cugan_2x":
+        print(f"[{idx}/{len(input_images)}] Real-CUGAN 2x upscaling {os.path.basename(img_path)} -> {base_webp}...")
+        cmd = [
+            REALCUGAN_BIN,
+            "-i", os.path.abspath(img_path),
+            "-o", os.path.abspath(temp_png),
+            "-m", "models-se",
+            "-s", "2",
+            "-n", "0",
+            "-f", "png"
+        ]
+        subprocess.run(cmd, cwd=REALCUGAN_DIR, check=True)
+        with Image.open(temp_png) as im:
+            im.save(out_webp_path, "WEBP", quality=95)
+        if os.path.exists(temp_png):
+            os.remove(temp_png)
+            
+    else: # cugan_4x
+        print(f"[{idx}/{len(input_images)}] Real-CUGAN 4x upscaling {os.path.basename(img_path)} -> {base_webp}...")
+        cmd = [
+            REALCUGAN_BIN,
+            "-i", os.path.abspath(img_path),
+            "-o", os.path.abspath(temp_png),
+            "-m", "models-se",
+            "-s", "4",
+            "-n", "0",
+            "-f", "png"
+        ]
+        subprocess.run(cmd, cwd=REALCUGAN_DIR, check=True)
+        with Image.open(temp_png) as im:
+            im_4k = im.resize((3840, 2160), Image.Resampling.LANCZOS)
+            im_4k.save(out_webp_path, "WEBP", quality=95)
+        if os.path.exists(temp_png):
+            os.remove(temp_png)
     
     upscaled_count += 1
     t_single_elapsed = time.time() - t_single_start
     t_total_so_far = time.time() - t_upscale_start
-    print(f"    ✓ Done in {t_single_elapsed:.2f}s (Total upscale elapsed: {t_total_so_far:.2f}s)")
+    print(f"    ✓ Done in {t_single_elapsed:.2f}s (Total elapsed: {t_total_so_far:.2f}s)")
 
 t_upscale_total = time.time() - t_upscale_start
-print(f"\n✨ Upscaling finished: {upscaled_count} upscaled, {cached_count} cached in {t_upscale_total:.2f}s")
+print(f"\n✨ Image processing finished: {upscaled_count} processed, {cached_count} cached in {t_upscale_total:.2f}s")
 
 # 2. Symmetrically crop each 4-panel image into 4 quadrants with caching
 print("\nChecking 4-quadrant symmetric panels...")

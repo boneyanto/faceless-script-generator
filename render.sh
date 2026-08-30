@@ -51,10 +51,10 @@ if [ -f "tools/realcugan/realcugan-ncnn-vulkan" ]; then
   xattr -cr tools/realcugan 2>/dev/null || true
 fi
 
-# 4. Run Image Upscaling (Real-CUGAN) & Symmetrical 4-Quadrant Slicing (Smart Incremental Caching)
+# 4. Run Image Preparation (Fast 2K / Selectable Upscaling)
 echo ""
-echo "🚀 [Step 1/2] Processing images with Real-CUGAN (4K) and slicing into 4 panels..."
-TARGET_DIR="${TARGET_DIR}" .venv/bin/python process_images.py "$@"
+echo "🚀 [Step 1/2] Processing images (Fast 2K Lanczos / Adaptive Upscale)..."
+UPSCALE_MODE="${UPSCALE_MODE:-fast_2k}" TARGET_DIR="${TARGET_DIR}" .venv/bin/python process_images.py "$@"
 
 # 5. Run WebCodecs Video Rendering Engine (No FFmpeg)
 echo ""
