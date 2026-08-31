@@ -57,8 +57,8 @@ flowchart TD
 ### Tahap 1: Preprocessing & Timeline Generator (`process_images.py`)
 - **Tujuan**: Menyiapkan aset visual dan menyinkronkan durasi naskah/audio ke dalam struktur data yang siap dikonsumsi renderer.
 - **Tools**:
-  - `Pillow (PIL)`: Menggunakan filter interpolasi `LANCZOS` untuk memperbesar gambar input ($1376 \times 768$) ke **2K QHD ($2560 \times 1440$) format WebP**.
-    - *Kenapa Lanczos 2K?* Pembesaran hanya $1.39\times$, garis tetap tajam tanpa artefak, dan prosesnya hanya **0.3 detik/gambar** (vs 10 detik dengan AI Real-CUGAN).
+  - `Real-CUGAN (NCNN Vulkan)`: Model AI neural upscaler yang secara aktif menghaluskan garis tepi (*ink-pen smoothing*) dan membersihkan noise/bintik kompresi (*AI denoising*) ke resolusi 2K+ (`2752x1536`) WebP dengan caching cerdas.
+  - `Pillow (PIL)`: Konversi format WebP kualitas tinggi dan alternatif opsi `fast_2k` via Lanczos.
   - `mutagen.mp3`: Membaca durasi audio `vo.mp3` secara presisi hingga satuan milidetik.
   - `LRC Regex Parser`: Membaca penanda waktu `[mm:ss.xx]` dari file lirik narasi.
 - **Output**: File `timeline.json` yang berisi array chunk durasi waktu dan path gambar 2K (`fullImage`).

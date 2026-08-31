@@ -22,8 +22,8 @@ REALCUGAN_BIN = os.path.join(REALCUGAN_DIR, "realcugan-ncnn-vulkan")
 os.makedirs(UPSCALED_DIR, exist_ok=True)
 
 # 1. Image preparation & upscaling with smart caching
-# Modes: 'fast_2k' (default, 0.3s/img via high-res Lanczos), 'cugan_2x', 'cugan_4x', 'none'
-UPSCALE_MODE = os.environ.get("UPSCALE_MODE", "fast_2k").lower()
+# Modes: 'cugan_2x' (default, Real-CUGAN AI line smoothing & 2K upscale), 'cugan_4x', 'fast_2k', 'none'
+UPSCALE_MODE = os.environ.get("UPSCALE_MODE", "cugan_2x").lower()
 for arg in sys.argv:
     if arg in ["--fast-2k", "--2k"]:
         UPSCALE_MODE = "fast_2k"

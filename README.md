@@ -19,10 +19,10 @@ Mesin otomatisasi pembuatan video edukasi animasi doodle (*faceless YouTube vide
    - Otomatis membuat metadata lengkap (Judul, Deskripsi dengan Sumber Ilmiah Kredibel, Tags SEO, dan Prompt Thumbnail).
    - Menghasilkan prompt gambar 4-panel simetris untuk setiap timestamp.
 
-3. **Fast 2K Image Processing & Adaptive Upscaling**:
-   - **Default: Fast 2K Lanczos**: Memproses gambar langsung ke resolusi 2K QHD (`2560x1440`) WebP hanya dalam **0.3 detik per gambar** (30x lebih cepat dibanding neural upscaling 4x), sangat tajam dan presisi untuk kanvas 1080p dengan ruang gerak *camera drift*.
-   - **Opsi Real-CUGAN AI Upscaler**: Mendukung mode neural upscaling (`cugan_2x` atau `cugan_4x`) melalui flag perintah atau variabel lingkungan `UPSCALE_MODE`.
-   - **Caching Cerdas**: Gambar yang sudah diproses tidak akan diproses ulang.
+3. **AI Neural Line Smoothing & Upscaling (Real-CUGAN 2x)**:
+   - **Default: Real-CUGAN 2x Neural Upscaler**: Memperbesar ke resolusi 2K+ (`2752x1536`) WebP dengan **penghalusan garis vektor (*ink-pen smoothing*)** dan pembersihan bintik kompresi (*AI Denoising*) otomatis, menghasilkan tampilan kartun yang rapi dan steril.
+   - **Caching Cerdas**: Gambar yang sudah diproses Real-CUGAN tidak akan diproses ulang (eksekusi instan 0.0s pada render kedua).
+   - **Opsi Alternatif**: Mendukung mode super cepat `fast_2k` (Lanczos 0.3s) atau `cugan_4x` via variabel `UPSCALE_MODE`.
 
 4. **WebCodecs Rendering Engine (Tanpa FFmpeg untuk Render)**:
    - **`OffscreenCanvas` (Zero-Copy)**: Menggambar frame langsung ke `VideoFrame` H.264 (`avc1.420028`) @ 1080p 30fps pada kecepatan **140+ FPS**.
@@ -96,7 +96,7 @@ Cukup jalankan script:
 
 Script akan otomatis:
 - Menyiapkan Python `.venv` & dependensi Node.js jika belum ada.
-- Menyiapkan gambar ke **Fast 2K Lanczos** (hanya ~0.3 detik/gambar) dengan caching otomatis (bisa override via `UPSCALE_MODE=cugan_2x` atau `cugan_4x`).
+- Meng-upscale gambar secara cerdas dengan **AI Real-CUGAN 2x** (penghalusan garis vektor & denoise otomatis) dengan caching otomatis.
 - Memproses urutan kontur 4-panel simetris.
 - Menyinkronkan durasi berdasarkan `timestamp.lrc` dan `vo.mp3`.
 - Merender video menggunakan **WebCodecs API** murni berbasis GPU.

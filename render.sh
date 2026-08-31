@@ -51,10 +51,10 @@ if [ -f "tools/realcugan/realcugan-ncnn-vulkan" ]; then
   xattr -cr tools/realcugan 2>/dev/null || true
 fi
 
-# 4. Run Image Preparation (Fast 2K / Selectable Upscaling)
+# 4. Run Image Preparation (AI Real-CUGAN Neural Line Smoothing & 2K Upscaling)
 echo ""
-echo "🚀 [Step 1/2] Processing images (Fast 2K Lanczos / Adaptive Upscale)..."
-UPSCALE_MODE="${UPSCALE_MODE:-fast_2k}" TARGET_DIR="${TARGET_DIR}" .venv/bin/python process_images.py "$@"
+echo "🚀 [Step 1/2] Processing images with AI Real-CUGAN (Neural Line Smoothing & Denoising)..."
+UPSCALE_MODE="${UPSCALE_MODE:-cugan_2x}" TARGET_DIR="${TARGET_DIR}" .venv/bin/python process_images.py "$@"
 
 # 5. Run WebCodecs Video Rendering Engine (No FFmpeg)
 echo ""
