@@ -61,7 +61,7 @@ flowchart TD
     - *Kenapa Lanczos 2K?* Pembesaran hanya $1.39\times$, garis tetap tajam tanpa artefak, dan prosesnya hanya **0.3 detik/gambar** (vs 10 detik dengan AI Real-CUGAN).
   - `mutagen.mp3`: Membaca durasi audio `vo.mp3` secara presisi hingga satuan milidetik.
   - `LRC Regex Parser`: Membaca penanda waktu `[mm:ss.xx]` dari file lirik narasi.
-- **Output**: File `timeline.json` yang berisi array chunk durasi waktu, path gambar 2K (`fullImage`), dan sub-panel.
+- **Output**: File `timeline.json` yang berisi array chunk durasi waktu dan path gambar 2K (`fullImage`).
 
 ---
 

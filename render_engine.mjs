@@ -57,16 +57,6 @@ const server = http.createServer((req, res) => {
     return;
   }
   
-  if (urlPath.startsWith("/panels/")) {
-    const filename = path.basename(urlPath);
-    const filePath = path.join(VIDEO_DIR, "panels", filename);
-    if (fs.existsSync(filePath)) {
-      res.writeHead(200, { "Content-Type": "image/webp" });
-      fs.createReadStream(filePath).pipe(res);
-      return;
-    }
-  }
-
   if (urlPath.startsWith("/upscaled/")) {
     const filename = path.basename(urlPath);
     const filePath = path.join(VIDEO_DIR, "upscaled", filename);
@@ -491,31 +481,11 @@ server.listen(PORT, async () => {
         const chunkEndSec = chunk.endTime;
         const chunkDuration = Math.max(0.1, chunkEndSec - chunkStartSec);
 
-        // Load full 4-panel image (upscaled) if sketch mode, or fallback to sliced panels
-        let fullBmp = null;
-        let comicStrip = null;
-
-        if (animationMode === "sketch" && pencilBmp) {
-          const fullImgFile = chunk.fullImage || `img_${cIdx + 1 < 10 ? '0' : ''}${cIdx + 1}.webp`;
-          try {
-            const fBlob = await (await fetch(`/upscaled/${fullImgFile}`)).blob();
-            fullBmp = await createImageBitmap(fBlob);
-            comicStrip = prepareComicStrip(fullBmp, width, height);
-          } catch (e) {
-            console.warn("Could not load full upscaled image, falling back to panels:", e);
-          }
-        }
-
-        // Fallback or zoom_pan: load sliced panels
-        const bitmaps = [];
-        if (!comicStrip) {
-          for (let pIdx = 0; pIdx < chunk.panels.length; pIdx++) {
-            const panel = chunk.panels[pIdx];
-            const imgBlob = await (await fetch(`/panels/${panel.file}`)).blob();
-            const bmp = await createImageBitmap(imgBlob);
-            bitmaps.push({ bmp, panel });
-          }
-        }
+        // Always load full 4-panel image (from /upscaled/)
+        const fullImgFile = chunk.fullImage || `img_${cIdx + 1 < 10 ? '0' : ''}${cIdx + 1}.webp`;
+        const fBlob = await (await fetch(`/upscaled/${fullImgFile}`)).blob();
+        const fullBmp = await createImageBitmap(fBlob);
+        const comicStrip = (animationMode === "sketch" && pencilBmp) ? prepareComicStrip(fullBmp, width, height) : null;
 
         const chunkStartFrame = Math.round(chunkStartSec * fps);
         const chunkEndFrame = Math.min(totalVideoFrames, Math.round(chunkEndSec * fps));
@@ -678,26 +648,23 @@ server.listen(PORT, async () => {
             }
 
             ctx.restore();
-          } else {
-            // Zoom & Pan fallback
-            let activeBmp = bitmaps[0].bmp;
-            let activePanel = bitmaps[0].panel;
-            for (let p = 0; p < bitmaps.length; p++) {
-              if (currentSec >= bitmaps[p].panel.startTime && currentSec <= bitmaps[p].panel.endTime) {
-                activeBmp = bitmaps[p].bmp;
-                activePanel = bitmaps[p].panel;
-                break;
-              }
-            }
-            const panelDuration = Math.max(0.1, activePanel.endTime - activePanel.startTime);
-            const rawProgress = Math.min(1.0, Math.max(0.0, (currentSec - activePanel.startTime) / panelDuration));
-            const ease = rawProgress * rawProgress * (3 - 2 * rawProgress);
+          } else if (fullBmp) {
+            // Zoom & Pan: slice 4 quadrants on-the-fly directly in GPU canvas
+            const subProgress = (chunkProgress * 4) % 1.0;
+            const qIdx = Math.min(3, Math.floor(chunkProgress * 4));
+            const ease = subProgress * subProgress * (3 - 2 * subProgress);
             const scale = 1.03 + ease * 0.05;
+
+            const halfW = fullBmp.width / 2;
+            const halfH = fullBmp.height / 2;
+            const sx = (qIdx % 2 === 1) ? halfW : 0;
+            const sy = (qIdx >= 2) ? halfH : 0;
+
             ctx.save();
             ctx.translate(width / 2, height / 2);
             ctx.scale(scale, scale);
             ctx.translate(-width / 2, -height / 2);
-            ctx.drawImage(activeBmp, 0, 0, width, height);
+            ctx.drawImage(fullBmp, sx, sy, halfW, halfH, 0, 0, width, height);
             ctx.restore();
           }
 
@@ -743,9 +710,6 @@ server.listen(PORT, async () => {
           comicStrip.progressiveCanvas.height = 0;
           comicStrip.sketchCanvas.width = 0;
           comicStrip.sketchCanvas.height = 0;
-        }
-        for (const { bmp } of bitmaps) {
-          bmp.close();
         }
 
         const chunkElapsedSec = ((performance.now() - chunkStartTime) / 1000).toFixed(2);

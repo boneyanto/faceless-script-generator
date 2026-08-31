@@ -59,8 +59,7 @@ faceless-script-generator/
             ├── script.txt        # Naskah per paragraf 40-50 kata
             ├── metadata.txt      # Judul, deskripsi, tags, prompt thumbnail
             ├── image_prompts.txt # Prompt gambar per timestamp
-            ├── upscaled/         # Hasil upscale 4K WebP (otomatis)
-            ├── panels/           # Hasil potong 4 panel (otomatis)
+            ├── upscaled/         # Hasil upscale 2K WebP (otomatis)
             ├── timeline.json     # Metadata timeline rendering (otomatis)
             └── output_video.mp4  # Video final hasil render (otomatis)
 ```
