@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@mediabunny/aac-encoder':
+        specifier: ^1.59.0
+        version: 1.59.0(mediabunny@1.59.0)
+      mediabunny:
+        specifier: ^1.59.0
+        version: 1.59.0
       mp4-muxer:
         specifier: ^5.2.2
         version: 5.2.2
@@ -20,6 +26,17 @@ importers:
 
 packages:
 
+  '@mediabunny/aac-encoder@1.59.0':
+    resolution: {integrity: sha512-qeVtQ9qhUdwQPY49aeONTug1P8gS2IFeR09ZaVTr+88EfpFESRfrN7PGovJM6/Tsku8V0aZcvXClF/KCT2pfVw==}
+    peerDependencies:
+      mediabunny: ^1.0.0
+
+  '@types/dom-mediacapture-transform@0.1.12':
+    resolution: {integrity: sha512-d7/QsLRwF864A5mgIM/YrfiglHoYn7zgCcAoJgW404r+2DwnNr7EBbLnCWpmOMgH8y0te73L1AV6H1bmauaWFw==}
+
+  '@types/dom-webcodecs@0.1.13':
+    resolution: {integrity: sha512-O5hkiFIcjjszPIYyUSyvScyvrBoV3NOEEZx/pMlsu44TKzWNkLVBBxnxJz42in5n3QIolYOcBYFCPZZ0h8SkwQ==}
+
   '@types/dom-webcodecs@0.1.19':
     resolution: {integrity: sha512-+yFUIDUaASFz0vQpWBErPxun/Lb+F0TdrlTsj50gm7K797YzEx2TmV6fEiwciHyFNghlZYPgQXH5qRcwMHcJFQ==}
 
@@ -30,6 +47,9 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+
+  mediabunny@1.59.0:
+    resolution: {integrity: sha512-m+nhRFI9gRQaDP22GCZwwL1nTtoAJtzHB7XzZmlff4P17+F/i5wZnDu4cc09a4ae5x41Px/C/GWdiROQHVM4eQ==}
 
   mp4-muxer@5.2.2:
     resolution: {integrity: sha512-dhozjTywI0h2qFzeShagt8YYw811fh1XlwiDCE2f6Aeqf6xG2CyuShoSa5E0AZDO8pPF0JOZ3wOmWBNWIGdSpQ==}
@@ -51,12 +71,27 @@ packages:
 
 snapshots:
 
+  '@mediabunny/aac-encoder@1.59.0(mediabunny@1.59.0)':
+    dependencies:
+      mediabunny: 1.59.0
+
+  '@types/dom-mediacapture-transform@0.1.12':
+    dependencies:
+      '@types/dom-webcodecs': 0.1.19
+
+  '@types/dom-webcodecs@0.1.13': {}
+
   '@types/dom-webcodecs@0.1.19': {}
 
   '@types/wicg-file-system-access@2020.9.8': {}
 
   fsevents@2.3.2:
     optional: true
+
+  mediabunny@1.59.0:
+    dependencies:
+      '@types/dom-mediacapture-transform': 0.1.12
+      '@types/dom-webcodecs': 0.1.13
 
   mp4-muxer@5.2.2:
     dependencies:

@@ -75,58 +75,104 @@ faceless-script-generator/
 
 ### 2. Persiapan Folder Video
 Buat folder untuk video Anda di dalam channel terkait, contoh:
-`channel_1/video_01_what_did_ancient_humans_actually_dream_about/`
+`channels/MyChannel/video_01_topic/`
 
-Letakkan 3 file wajib di dalam folder tersebut:
-1. `images/` : Berisi gambar 4-panel (misal: `01_...png`, `02_...png`, dst.)
-2. `vo.mp3` : File rekaman suara voiceover.
-3. `timestamp.lrc` : File lirik/timestamp bertanda waktu (misal dari Whisper / Descript / Premiere).
+Letakkan file-file berikut di dalam folder tersebut:
+1. `images/` : Berisi gambar urut (misal: `[001]_4-panel_symmet.png`, atau format `.webp` / `.jpg`). Mendukung resolusi **Lanskap** maupun **Vertikal**.
+2. `vo.mp3` : File rekaman suara narasi / voiceover.
+3. Subtitle (Pilih salah satu format):
+   - `timestamp.lrc` : File stempel waktu lirik/narasi (otomatis di-paged jika teks panjang).
+   - `subtitles.srt` atau `*.srt` : File subtitle standar SubRip.
+   - `subtitles.vtt` atau `*.vtt` : File subtitle WebVTT.
+
+---
 
 ### 3. Jalankan Render Sekali Perintah
 
-Cukup jalankan script:
+Gunakan script pembantu [`render.sh`](file:///Users/f/Documents/OpenCode/faceless-script-generator/render.sh):
 
 ```bash
-# Menggunakan Animasi Komik 4-Panel Bertahap (Default)
-./render.sh channels/Channel-Name/video_01_topic
-
-# Atau jika ingin mode Zoom & Pan klasik tanpa animasi gambar pensil:
-./render.sh channels/Channel-Name/video_01_topic zoom_pan
+./render.sh <folder_video> [opsi...]
 ```
 
-Script akan otomatis:
-- Menyiapkan Python `.venv` & dependensi Node.js jika belum ada.
-- Meng-upscale gambar secara cerdas dengan **AI Real-CUGAN 2x** (penghalusan garis vektor & denoise otomatis) dengan caching otomatis.
-- Memproses urutan kontur 4-panel simetris.
-- Menyinkronkan durasi berdasarkan `timestamp.lrc` dan `vo.mp3`.
-- Merender video menggunakan **WebCodecs API** murni berbasis GPU.
-- Menyimpan hasil video ke:
-  `channels/Channel-Name/video_01_topic/output_video.mp4`
+#### 📌 Contoh Perintah Populer:
+
+```bash
+# 1. Mode Standar: Animasi Sketsa Pensil Whiteboard + AI Real-CUGAN 2K (Default)
+./render.sh "channels/MyChannel/video_01_topic"
+
+# 2. Mode Zoom & Pan Sinematik + Ambient Blurred Background + Subtitle Otomatis
+./render.sh "channels/MyChannel/video_01_topic" --zoom
+
+# 3. Preview Cepat (Tanpa Upscaling CUGAN, langsung WebP ~0.05s/img)
+./render.sh "channels/MyChannel/video_01_topic" --zoom --fast
+
+# 4. Render dengan File Subtitle Tertentu
+./render.sh "channels/MyChannel/video_01_topic" --zoom --subs "channels/MyChannel/video_01_topic/custom.srt"
+
+# 5. Render Tanpa Subtitle
+./render.sh "channels/MyChannel/video_01_topic" --zoom --no-subs
+
+# 6. Mode Gambar Tunggal (1 gambar utuh per chunk, bukan 4-panel split)
+./render.sh "channels/MyChannel/video_01_topic" --zoom --single
+
+# 7. Paksa Proses Ulang Gambar (Abaikan cache di folder upscaled/)
+./render.sh "channels/MyChannel/video_01_topic" --force
+
+# 8. Tambahkan Watermark Teks Otomatis (Langsung menempel tanpa edit ulang)
+./render.sh "channels/MyChannel/video_01_topic" --zoom -w "@CorazonBeats"
+
+# 9. Atur Intensitas Zoom Lebih Kuat (misal 8%) dan Pan Drift (2%)
+./render.sh "channels/MyChannel/video_01_topic" --zoom --zoom-scale 0.08 --pan-drift 0.02
+```
+
+---
+
+### ⚙️ Daftar Opsi Lengkap (`render.sh`)
+
+| Opsi / Flag | Deskripsi |
+|---|---|
+| **Animasi** | |
+| `--sketch` *(Default)* | Animasi sketsa pensil whiteboard menggambar kontur lalu warna muncul bertahap |
+| `--zoom`, `--zoom-pan` | Animasi pergerakan kamera sinematik zoom/pan dengan latar belakang *ambient blur* |
+| **Tata Letak Panel** | |
+| *(Default)* | 4 panel per gambar (2x2 symmetrical grid) |
+| `--single` | 1 panel utuh per gambar (bukan 4-panel grid) |
+| **Subtitle & Watermark** | |
+| *(Default Subtitle)* | Otomatis mendeteksi `.srt`, `.vtt`, atau `.lrc` di folder video |
+| `--subs <file>` | Menentukan path file subtitle tertentu secara eksplisit |
+| `--no-subs` | Menonaktifkan tampilan subtitle |
+| `--watermark <text>`, `-w` | Menambahkan teks watermark semi-transparan (misal: `-w "@NamaChannel"`) |
+| **Kamera Zoom & Pan** | |
+| `--zoom-scale <val>` | Mengatur intensitas zoom kamera (Default: `0.04` = 4%, misal: `0.08` untuk 8%) |
+| `--pan-drift <val>` | Mengatur pergeseran pan kamera (Default: `0.015` = 1.5%) |
+| **Kualitas Upscale AI** | |
+| *(Default)* | Real-CUGAN 2x AI Neural Upscaler (garis halus dan tajam) |
+| `--fast`, `-f` | Tanpa AI Upscaling (paling cepat, konversi WebP langsung ~0.05s) |
+| `--fast-2k`, `--2k` | Resampling Lanczos 2K cepat (~0.3s/img) |
+| `--cugan-4x` | Real-CUGAN 4K AI Upscale |
+| `--force` | Paksa proses ulang gambar meski sudah ada file di `upscaled/` |
 
 ---
 
 ## 🛠️ Perintah Manual (Jika Ingin Dijalankan Terpisah)
 
-1. **Setup Python Virtual Environment:**
+1. **Setup Environment:**
    ```bash
    python3 -m venv .venv
    .venv/bin/pip install pillow mutagen requests
-   ```
-
-2. **Setup Node.js Dependencies:**
-   ```bash
    pnpm install
    pnpm exec playwright install chromium
    ```
 
-3. **Proses Gambar (Upscale & Timeline):**
+2. **Proses Gambar (Upscale & Timeline):**
    ```bash
-   TARGET_DIR="channels/Channel-Name/video_01_topic" .venv/bin/python process_images.py
+   TARGET_DIR="channels/MyChannel/video_01_topic" .venv/bin/python process_images.py
    ```
 
-4. **Render Video (WebCodecs Engine):**
+3. **Render Video (WebCodecs Engine):**
    ```bash
-   ANIMATION_MODE=sketch TARGET_DIR="channels/Channel-Name/video_01_topic" node render_engine.mjs
+   ANIMATION_MODE=zoom_pan TARGET_DIR="channels/MyChannel/video_01_topic" node render_engine.mjs
    ```
 
 ---

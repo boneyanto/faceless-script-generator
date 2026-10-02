@@ -31,16 +31,54 @@ for arg in sys.argv:
         UPSCALE_MODE = "cugan_2x"
     elif arg in ["--cugan-4x", "--cugan4x", "--cugan"]:
         UPSCALE_MODE = "cugan_4x"
-    elif arg in ["--no-upscale", "--none"]:
+    elif arg in ["--no-upscale", "--none", "--skip-upscale", "--no-cugan", "--fast", "-f"]:
         UPSCALE_MODE = "none"
 
-input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.png")))
+def natural_sort_key(s):
+    # Splits string by numbers so '100' comes after '99' and '11' comes after '10'
+    return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', os.path.basename(s))]
+
+input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.png")), key=natural_sort_key)
 if not input_images:
-    input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.webp"))) + sorted(glob.glob(os.path.join(IMAGES_DIR, "*.jpg")))
+    input_images = sorted(glob.glob(os.path.join(IMAGES_DIR, "*.webp")) + glob.glob(os.path.join(IMAGES_DIR, "*.jpg")), key=natural_sort_key)
 
+def get_lrc_timestamps():
+    ts = []
+    if os.path.exists(LRC_PATH):
+        with open(LRC_PATH, "r") as f:
+            for line in f:
+                match = re.match(r"\[(\d+):(\d+\.\d+)\](.*)", line)
+                if match:
+                    mins = int(match.group(1))
+                    secs = float(match.group(2))
+                    text = match.group(3).strip()
+                    if not text:
+                        continue
+                    ts.append({"time": mins * 60 + secs, "text": text})
+    return ts
+
+lrc_timestamps = get_lrc_timestamps()
+
+print(f"Found {len(input_images)} input images and {len(lrc_timestamps)} LRC timestamp entries. Upscale Mode: [{UPSCALE_MODE}]")
+
+# Strict sync check: fail early if count of images != count of timestamps
+if len(lrc_timestamps) != len(input_images):
+    print("\n" + "=" * 65)
+    print("❌ ERROR: DESINKRONISASI TERDETEKSI!")
+    print(f"   Jumlah Timestamp di timestamp.lrc : {len(lrc_timestamps)} baris")
+    print(f"   Jumlah Gambar di folder images/    : {len(input_images)} file")
+    print("=" * 65)
+    print("⚠️  Penyebab:")
+    print("   Setiap baris audio/timestamp membutuhkan tepat 1 gambar yang selaras.")
+    print("   Karena jumlahnya berbeda, video akan mengalami pergeseran (desinkronisasi)")
+    print("   di mana visual tidak akan cocok lagi dengan narasi suara.")
+    print("\n💡 Solusi:")
+    print("   1. Pastikan seluruh naskah ter-generate di voice-over/timestamp.lrc tanpa ada yang terlewat, ATAU")
+    print("   2. Sesuaikan jumlah file gambar di folder images/ agar sama persis dengan jumlah baris di timestamp.lrc.")
+    print("=" * 65 + "\n")
+    print("🛑 Proses render DIBATALKAN untuk mencegah hasil video yang rusak/tidak sinkron.")
+    sys.exit(1)
 force_reprocess = "--force" in sys.argv
-
-print(f"Found {len(input_images)} input images. Upscale Mode: [{UPSCALE_MODE}]")
 t_upscale_start = time.time()
 upscaled_count = 0
 cached_count = 0
@@ -60,8 +98,11 @@ for idx, img_path in enumerate(input_images, 1):
     if UPSCALE_MODE == "fast_2k":
         print(f"[{idx}/{len(input_images)}] Fast 2K Lanczos processing {os.path.basename(img_path)} -> {base_webp}...")
         with Image.open(img_path) as im:
-            # Scale to crisp 2K (2560x1440) for 1080p canvas with drift margin
-            im_2k = im.resize((2560, 1440), Image.Resampling.LANCZOS)
+            # Proportional Lanczos scale targeting 2560 max edge (never distorts aspect ratio)
+            w, h = im.size
+            scale = 2560 / max(w, h)
+            new_w, new_h = max(1, int(round(w * scale))), max(1, int(round(h * scale)))
+            im_2k = im.resize((new_w, new_h), Image.Resampling.LANCZOS)
             im_2k.save(out_webp_path, "WEBP", quality=95)
             
     elif UPSCALE_MODE == "none":
@@ -99,8 +140,14 @@ for idx, img_path in enumerate(input_images, 1):
         ]
         subprocess.run(cmd, cwd=REALCUGAN_DIR, check=True)
         with Image.open(temp_png) as im:
-            im_4k = im.resize((3840, 2160), Image.Resampling.LANCZOS)
-            im_4k.save(out_webp_path, "WEBP", quality=95)
+            w, h = im.size
+            if max(w, h) > 3840:
+                scale = 3840 / max(w, h)
+                new_w, new_h = max(1, int(round(w * scale))), max(1, int(round(h * scale)))
+                im_4k = im.resize((new_w, new_h), Image.Resampling.LANCZOS)
+                im_4k.save(out_webp_path, "WEBP", quality=95)
+            else:
+                im.save(out_webp_path, "WEBP", quality=95)
         if os.path.exists(temp_png):
             os.remove(temp_png)
     
@@ -112,25 +159,12 @@ for idx, img_path in enumerate(input_images, 1):
 t_upscale_total = time.time() - t_upscale_start
 print(f"\n✨ Image processing finished: {upscaled_count} processed, {cached_count} cached in {t_upscale_total:.2f}s")
 
-# 2. Parse LRC and calculate chunk durations
+# 2. Calculate chunk durations from lrc_timestamps
 audio = MP3(VO_PATH)
 total_audio_duration = audio.info.length
 print(f"Total audio duration: {total_audio_duration:.3f}s")
-
-timestamps = []
-with open(LRC_PATH, "r") as f:
-    for line in f:
-        match = re.match(r"\[(\d+):(\d+\.\d+)\](.*)", line)
-        if match:
-            mins = int(match.group(1))
-            secs = float(match.group(2))
-            text = match.group(3).strip()
-            if not text:
-                continue
-            total_sec = mins * 60 + secs
-            timestamps.append({"time": total_sec, "text": text})
-
-print(f"Parsed {len(timestamps)} timestamps from LRC.")
+timestamps = lrc_timestamps
+print(f"Using {len(timestamps)} verified timestamps from LRC.")
 
 chunks = []
 for i in range(len(timestamps)):

@@ -1,6 +1,6 @@
 {
   "name": "faceless-script-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,8 @@
   "license": "ISC",
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
+    "@mediabunny/aac-encoder": "^1.59.0",
+    "mediabunny": "^1.59.0",
     "mp4-muxer": "^5.2.2",
     "playwright": "^1.62.1",
     "webm-muxer": "^5.1.4"
